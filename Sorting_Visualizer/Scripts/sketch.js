@@ -7,7 +7,7 @@ function setup() {
   createCanvas(500, 500);
   frameRate(100);
 
-  is = new Insertion_sort();
+  is = new Bubble_sort();
   for (let i = 0; i < is.n; i++) is.arr.push(getRandomInt(500));
 
   current = is.arr[is.i];
