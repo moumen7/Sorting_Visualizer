@@ -6,13 +6,15 @@ class Bubble_sort extends Sorting {
         this.colorsr.push(0);
         this.colorsg.push(0);
         this.colorsb.push(150);
+        this.algorithm = "Bubble Sort"
       }
     }
     sort() {
       if (this.i == this.n || this.sortedbool == true) {
         this.sortedbool = true;
         this.sorted();
-      } else {
+      } 
+      else {
         is.colorsr[this.j + 1] = 255;
         is.colorsg[this.j + 1] = 0;
         is.colorsb[this.j + 1] = 0;
@@ -20,15 +22,19 @@ class Bubble_sort extends Sorting {
         is.colorsg[this.prevj] = 255;
         is.colorsb[this.prevj] = 255;
         this.prevj = this.j + 1;
-  
+        is.colorsr[this.n - this.i + 1] = 0;
+        is.colorsg[this.n - this.i+ 1 ] = 255;
+        is.colorsb[this.n - this.i+1] = 0; 
         if (this.arr[this.j] > this.arr[this.j + 1]) {
           let temp = this.arr[this.j];
           this.arr[this.j] = this.arr[this.j + 1];
           this.arr[this.j + 1] = temp;
+          this.arrayacess+=5;
+          this.comparsions++;
         }
   
         this.j++;
-        if (this.j == this.n) {
+        if (this.j == this.n - this.i) {
           this.j = 0;
           this.i++;
         }

@@ -6,9 +6,11 @@ class Insertion_sort extends Sorting {
         this.colorsr.push(0);
         this.colorsg.push(0);
         this.colorsb.push(150);
+        this.algorithm = "Insertion Sort";
       }
     }
     sort() {
+
       is.colorsr[this.j + 1] = 255;
       is.colorsg[this.j + 1] = 0;
       is.colorsb[this.j + 1] = 0;
@@ -20,8 +22,12 @@ class Insertion_sort extends Sorting {
         this.sortedbool = true;
         this.sorted();
       }
+      else
+      {
       if (is.j > -1 && current < is.arr[is.j]) {
         is.arr[is.j + 1] = is.arr[is.j];
+        this.arrayacess+=3;
+        this.comparsions++;
         is.j--;
       }
       if (!(is.j > -1 && current < is.arr[is.j])) {
@@ -29,7 +35,10 @@ class Insertion_sort extends Sorting {
         is.i++;
         is.j = is.i - 1;
         current = is.arr[is.i];
+        this.arrayacess+=3;
+        this.comparsions++;
       }
+    }
     }
     sorted() {
       is.colorsr[this.x] = 0;
