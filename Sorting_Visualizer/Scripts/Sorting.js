@@ -32,4 +32,20 @@ class Sorting
     throw new Error("Impelemnation not found");
   }
 
+  setInitialColors(Sorting){
+    throw new Error("Impelemnation not found");
+  }
+
+  sorted(){
+    this.x = this.n - 1;
+    this.setIndexColor(this, this.x, 0 , 255, 0);
+    this.x--;
+  }
+
+  setIndexColor(Sorting, index, r, g, b) {
+      Sorting.colorsr[index] = r;
+        Sorting.colorsg[index] = g;
+        Sorting.colorb[index] = b;
+  }
+
 }

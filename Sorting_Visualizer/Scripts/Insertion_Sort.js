@@ -8,15 +8,16 @@ class Insertion_sort extends Sorting {
         this.colorsb.push(150);
         this.algorithm = "Insertion Sort";
       }
+      
     }
     sort() {
 
-      is.colorsr[this.j + 1] = 255;
-      is.colorsg[this.j + 1] = 0;
-      is.colorsb[this.j + 1] = 0;
-      is.colorsr[this.prevj] = 255;
-      is.colorsg[this.prevj] = 255;
-      is.colorsb[this.prevj] = 255;
+      selectedAlgo.colorsr[this.j + 1] = 255;
+      selectedAlgo.colorsg[this.j + 1] = 0;
+      selectedAlgo.colorsb[this.j + 1] = 0;
+      selectedAlgo.colorsr[this.prevj] = 255;
+      selectedAlgo.colorsg[this.prevj] = 255;
+      selectedAlgo.colorsb[this.prevj] = 255;
       this.prevj = this.j + 1;
       if (this.i == this.n || this.sortedbool == true) {
         this.sortedbool = true;
@@ -24,26 +25,26 @@ class Insertion_sort extends Sorting {
       }
       else
       {
-      if (is.j > -1 && current < is.arr[is.j]) {
-        is.arr[is.j + 1] = is.arr[is.j];
+      if (selectedAlgo.j > -1 && current < selectedAlgo.arr[selectedAlgo.j]) {
+        selectedAlgo.arr[selectedAlgo.j + 1] = selectedAlgo.arr[selectedAlgo.j];
         this.arrayacess+=3;
         this.comparsions++;
-        is.j--;
+        selectedAlgo.j--;
       }
-      if (!(is.j > -1 && current < is.arr[is.j])) {
-        is.arr[is.j + 1] = current;
-        is.i++;
-        is.j = is.i - 1;
-        current = is.arr[is.i];
+      if (!(selectedAlgo.j > -1 && current < selectedAlgo.arr[selectedAlgo.j])) {
+        selectedAlgo.arr[selectedAlgo.j + 1] = current;
+        selectedAlgo.i++;
+        selectedAlgo.j = selectedAlgo.i - 1;
+        current = selectedAlgo.arr[selectedAlgo.i];
         this.arrayacess+=3;
         this.comparsions++;
       }
     }
     }
     sorted() {
-      is.colorsr[this.x] = 0;
-      is.colorsg[this.x] = 255;
-      is.colorsb[this.x] = 0;
+      selectedAlgo.colorsr[this.x] = 0;
+      selectedAlgo.colorsg[this.x] = 255;
+      selectedAlgo.colorsb[this.x] = 0;
       this.x--;
     }
   }
