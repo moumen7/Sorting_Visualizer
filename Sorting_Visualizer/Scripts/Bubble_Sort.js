@@ -13,7 +13,7 @@ class Bubble_sort extends Sorting {
     sort() {
       if (this.i == this.n || this.sortedbool == true) {
         this.sortedbool = true;
-        this.sorted();
+        this.greenOnFinish();
       } 
       else {
         selectedAlgo.colorsr[this.j + 1] = 255;
@@ -41,7 +41,7 @@ class Bubble_sort extends Sorting {
         }
       }
     }
-    sorted() {
+    greenOnFinish() {
       selectedAlgo.colorsr[this.x] = 0;
       selectedAlgo.colorsg[this.x] = 255;
       selectedAlgo.colorsb[this.x] = 0;

@@ -22,6 +22,7 @@ class Insertion_sort extends Sorting {
       if (this.i == this.n || this.sortedbool == true) {
         this.sortedbool = true;
         this.sorted();
+        this.greenOnFinish();
       }
       else
       {
