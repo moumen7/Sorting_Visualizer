@@ -18,10 +18,10 @@ window.onload = function() {
 
 
 function setup() {
-  createCanvas(500, 450);
+  createCanvas(500, 460);
   frameRate(100);
   sel = createSelect();
-  sel.position(10, 10);
+  sel.position(275, 67);
   sel.option('Insertion');
   sel.option('Bubble');
   sel.option('Selection');
@@ -31,17 +31,18 @@ function setup() {
   selectedAlgo = new Insertion_sort();
 
   //generating values;
-  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
+  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(395));
   current = selectedAlgo.arr[selectedAlgo.i];
 }
 
 function draw() {
+  
   //ui
   background(0);
   fill(255, 255, 255);
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
-  + selectedAlgo.comparsions, 0 , 450);
+  + selectedAlgo.comparsions, 10 , 450);
   //generating rects
   for (let k = 0; k < selectedAlgo.n; k++) {
     fill(selectedAlgo.colorsr[k], selectedAlgo.colorsg[k], selectedAlgo.colorsb[k]);
@@ -68,6 +69,6 @@ function mySelectEvent() {
   else if(item == 'Selection')
   selectedAlgo = new  Selection_Sort();
   //pushing random values
-  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(500));
+  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(395));
 }
 

@@ -2,37 +2,35 @@ class Selection_Sort extends Sorting {
     constructor() {
       super();
       this.x = this.n-1;
-      this.setInitialColors(255, 255, 255);
+      this.next = this.j + 1;
+      this.prevMin = 0;
+      this.setInitialColors(0, 0, 150);
       this.algorithm = "Selection Sort";
     }
 
     
     async sort() {
-      if (this.j == this.n || this.sortedbool == true) {
+      
+      if (this.j >= this.n || this.sortedbool == true) {
         this.sortedbool = true;
         await this.sleep(1300);
         this.greenOnFinish();
       }
       else 
       { 
+       
         this.ColorManager();
-
-        if (this.j < this.n - 1){
-        this.next = this.j + 1;
-        this.minElement = this.j;
         //get min
-        while (this.next < this.n){
-            if (this.arr[this.next] < this.arr[this.minElement])
-                 this.minElement = this.next;
-                  this.comparsions += 2;
-                  this.arrayacess += 2;
-                  this.OnSwapColors();
-           this.next++;                
-        }
-        //swap
-        this.swap(this.minElement, this.j);     
-      }
-      this.j++;
+        this.getMin();
+        
+
+        if (this.next >= this.n){
+          this.swap(this.minElement, this.j);
+          this.j++;
+          this.next = this.j + 1;
+          this.minElement = this.j;
+        }   
+      
     }
 
     }
@@ -50,18 +48,37 @@ ColorManager(){
       selectedAlgo.colorsr[this.j] = 255;
       selectedAlgo.colorsg[this.j] = 0;
       selectedAlgo.colorsb[this.j] = 0;
-      this.colorsr[this.next] = 214;
-      this.colorsg[this.next] = 78;
-      this.colorsb[this.next] = 9;
+      selectedAlgo.colorsr[this.j - 1] = 255;
+      selectedAlgo.colorsg[this.j - 1] = 255;
+      selectedAlgo.colorsb[this.j - 1] = 255;
+      this.colorsr[this.next] = 255;
+      this.colorsg[this.next] = 0;
+      this.colorsb[this.next] = 0;
+      this.colorsr[this.next - 1] = 255;
+      this.colorsg[this.next - 1] = 255;
+      this.colorsb[this.next - 1] = 255;
+
 }
 
-OnSwapColors() {
-  this.colorsr[this.minElement] = 23;
-  this.colorsg[this.minElement] = 192;
-  this.colorsb[this.minElement] = 195;
-  this.colorsr[this.next] = 20;
-  this.colorsg[this.next] = 194;
-  this.colorsb[this.next] = 97;
+OnMinSelected() {
+  
+  this.colorsr[this.index] = 0;
+  this.colorsg[this.index] = 0;
+  this.colorsb[this.index] = 200;
+}
+
+async getMin(){
+  while (this.next < this.n)
+  {
+    if (this.arr[this.next] < this.arr[this.minElement])
+          this.minElement = this.next;
+          this.comparsions += 1;
+          this.arrayacess += 2;
+          this.next++; 
+    break;
+  }
+  
+  
 }
 
  sleep(ms) {
