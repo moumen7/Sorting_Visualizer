@@ -1,51 +1,84 @@
 class Bubble_sort extends Sorting {
-    constructor() {
-      super();
-      this.x = this.n - 1;
-      for (let k = 0; k < this.n; k++) {
-        this.colorsr.push(0);
-        this.colorsg.push(0);
-        this.colorsb.push(150);
-        this.algorithm = "Bubble Sort";
-      }
-      
+  constructor() {
+    super();
+    this.x = this.n - 1;
+    this.setInitialColors(0, 0 ,150);
+    this.algorithm = "Bubble Sort";
+    this.i=0;
+    this.j=0; 
+  }
+  sort() 
+  {
+    if(this.sorted())
+    {
+      this.greenOnFinish();
     }
-    sort() {
-      if (this.i == this.n || this.sortedbool == true) {
-        this.sortedbool = true;
-        this.sorted();
-      } 
-      else {
-        selectedAlgo.colorsr[this.j + 1] = 255;
-        selectedAlgo.colorsg[this.j + 1] = 0;
-        selectedAlgo.colorsb[this.j + 1] = 0;
-        selectedAlgo.colorsr[this.prevj] = 255;
-        selectedAlgo.colorsg[this.prevj] = 255;
-        selectedAlgo.colorsb[this.prevj] = 255;
-        this.prevj = this.j + 1;
-        selectedAlgo.colorsr[this.n - this.i + 1] = 0;
-        selectedAlgo.colorsg[this.n - this.i+ 1 ] = 255;
-        selectedAlgo.colorsb[this.n - this.i+1] = 0; 
-        if (this.arr[this.j] > this.arr[this.j + 1]) {
-          let temp = this.arr[this.j];
-          this.arr[this.j] = this.arr[this.j + 1];
-          this.arr[this.j + 1] = temp;
-          this.arrayacess+=5;
-          this.comparsions++;
-        }
-  
-        this.j++;
-        if (this.j == this.n - this.i) {
-          this.j = 0;
-          this.i++;
-        }
-      }
-    }
-    sorted() {
-      selectedAlgo.colorsr[this.x] = 0;
-      selectedAlgo.colorsg[this.x] = 255;
-      selectedAlgo.colorsb[this.x] = 0;
-      this.x--;
+    else
+    {
+      this.preformsort();
+      this.changecolors();
     }
   }
-  
+  sorted() 
+  { 
+    if(this.i>=this.n)
+      return true;
+    else
+      return false;
+  }
+  changecolors()
+  {
+    for (let s =0; s<this.n;s++) 
+    {
+      if(s == this.j + 1)
+      {
+        this.setIndexColor(s,255,0,0);
+      }
+      else if(s>=this.n - this.i)
+      {
+        this.setIndexColor(s,0,255,0);
+      }
+      else
+      {
+        this.setIndexColor(s,255,255,255);
+      }
+     
+    }
+  }
+  preformsort()
+  {
+    for (this.i; this.i < this.n; this.i++) 
+    {        
+        while (!this.endsearch())
+        {
+          if (this.arr[this.j] > this.arr[this.j+1])
+          {
+            this.swap(this.j, this.j+1);
+          }
+          this.j++;
+          break;
+        }
+        if(this.endsearch())
+        {
+           this.i++;
+           this.j = 0;
+        }
+        this.arrayacess+=2;
+      break;
+    }
+  }
+  endsearch()
+  {
+   
+    if(this.j >= this.n-this.i-1)
+    return true;
+    else
+    return false;
+  }
+  swap(a, b)
+  {
+    this.temp = this.arr[a];
+    this.arr[a] = this.arr[b];
+    this.arr[b] = this.temp;
+  }
+}

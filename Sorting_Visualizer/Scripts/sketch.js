@@ -1,10 +1,25 @@
 let selectedAlgo;
 let sel;
 
+window.onload = function() {
+  Particles.init({
+    selector: '.background'
+  });
+  Particles.init( {
+    color: '#FFFFFF'
+  });
+  Particles.init( {
+    connectParticles: true
+  });
+  Particles.init( {
+    speed: 0.25
+  });
+};
+
 
 function setup() {
-  createCanvas(500, 560);
-  frameRate(100);
+  createCanvas(500, 450);
+  frameRate(30);
   sel = createSelect();
   sel.position(10, 10);
   sel.option('Insertion');
@@ -16,7 +31,7 @@ function setup() {
   selectedAlgo = new Insertion_sort();
 
   //generating values;
-  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(500));
+  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
   current = selectedAlgo.arr[selectedAlgo.i];
 }
 
@@ -26,7 +41,7 @@ function draw() {
   fill(255, 255, 255);
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
-  + selectedAlgo.comparsions, 0 , 550);
+  + selectedAlgo.comparsions, 0 , 450);
   //generating rects
   for (let k = 0; k < selectedAlgo.n; k++) {
     fill(selectedAlgo.colorsr[k], selectedAlgo.colorsg[k], selectedAlgo.colorsb[k]);
@@ -53,5 +68,6 @@ function mySelectEvent() {
   else if(item == 'Selection')
   selectedAlgo = new  Selection_Sort();
   //pushing random values
-  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(500));
+  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
 }
+
