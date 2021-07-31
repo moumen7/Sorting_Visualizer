@@ -9,12 +9,36 @@ canvas {
   transform: translate(-50%, -50%);          
 }
 
+.title{
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  margin-top: -10px;
+  width: 100%;
+  font-size: xx-large;
+  font-family: 'Trebuchet MS', sans-serif;
+  
+}
+
+.square {
+  height: 470px;
+  width: 510px;
+  background-color:whitesmoke;
+  
+}
+
 .background {
   height: 100%;
   background: #000000 ;
   color: #ffffff;
   
 }
+@font-face {
+  font-family: titleFont;
+  src: url(titlefont.ttf);
+}
+
 
 .footer {
   position: fixed;
@@ -23,7 +47,7 @@ canvas {
   width: 100%;
   color: white;
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: small;
 }
 
