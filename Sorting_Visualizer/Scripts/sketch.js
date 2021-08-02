@@ -25,6 +25,7 @@ function setup() {
   sel.option('Insertion');
   sel.option('Bubble');
   sel.option('Selection');
+  sel.option('Merge');
 
   sel.selected('Insertion');
   sel.changed(mySelectEvent);
@@ -53,6 +54,7 @@ function draw() {
 
   //invoke sorting method
   selectedAlgo.sort();
+  
 }
 
 function mySelectEvent() {
@@ -69,6 +71,9 @@ function mySelectEvent() {
   selectedAlgo = new  Insertion_sort();
   else if(item == 'Selection')
   selectedAlgo = new  Selection_Sort();
+  else if(item == 'Merge')
+  selectedAlgo = new  Merge_Sort();
+
   //pushing random values
   for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
 }
