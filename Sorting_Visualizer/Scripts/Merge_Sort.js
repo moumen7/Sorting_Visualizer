@@ -104,7 +104,7 @@ class Merge_Sort extends Sorting {
         var indexn1 = 0;
         var indexn2 = 0;
 
-        for (let k=l; k <= r ;k++)
+        for (let k = l; k <= r ; k++)
         {
             if(n1[indexn1] < n2[indexn2])
             {
