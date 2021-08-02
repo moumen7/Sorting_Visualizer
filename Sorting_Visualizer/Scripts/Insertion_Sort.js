@@ -8,12 +8,12 @@ class Insertion_sort extends Sorting {
     sort() {
       if(this.sorted())
       {
-        this.greenOnFinish();
+        this.ColornOnFinish(0, 255, 0);
       }
       else
       {
         this.preformsort();
-        this.changecolors();
+        this.ColorManager();
       }
     }
     sorted() 
@@ -23,7 +23,7 @@ class Insertion_sort extends Sorting {
       else
         return false;
     }
-    changecolors()
+    ColorManager()
     {
       for (let s =0; s<this.n;s++) 
       {

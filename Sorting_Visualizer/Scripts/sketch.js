@@ -18,13 +18,8 @@ window.onload = function() {
 
 
 function setup() {
-<<<<<<< HEAD
-  createCanvas(500, 450);
-  frameRate(30);
-=======
   createCanvas(500, 460);
-  frameRate(100);
->>>>>>> 5b1c1108a48a647b52c7bd72a90da52486089b59
+  frameRate(30);
   sel = createSelect();
   sel.position(275, 67);
   sel.option('Insertion');
@@ -43,6 +38,7 @@ function setup() {
 function draw() {
   
   //ui
+  
   background(0);
   fill(255, 255, 255);
   text("Algorithm - " + selectedAlgo.algorithm +
@@ -74,10 +70,6 @@ function mySelectEvent() {
   else if(item == 'Selection')
   selectedAlgo = new  Selection_Sort();
   //pushing random values
-<<<<<<< HEAD
   for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
-=======
-  for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(395));
->>>>>>> 5b1c1108a48a647b52c7bd72a90da52486089b59
 }
 

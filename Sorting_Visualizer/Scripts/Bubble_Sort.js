@@ -1,32 +1,34 @@
 class Bubble_sort extends Sorting {
   constructor() {
     super();
-    this.x = this.n - 1;
     this.setInitialColors(0, 0 ,150);
     this.algorithm = "Bubble Sort";
     this.i=0;
     this.j=0; 
   }
+  
   sort() 
   {
     if(this.sorted())
     {
-      this.greenOnFinish();
+      this.ColornOnFinish(0, 255, 0);
     }
     else
     {
       this.preformsort();
-      this.changecolors();
+      this.ColorManager();
     }
   }
+
+
   sorted() 
   { 
     if(this.i>=this.n)
       return true;
-    else
-      return false;
+   return false;
   }
-  changecolors()
+
+  ColorManager()
   {
     for (let s =0; s<this.n;s++) 
     {
