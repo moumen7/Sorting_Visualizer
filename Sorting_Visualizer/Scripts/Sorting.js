@@ -19,10 +19,11 @@ class Sorting
   this.colorsb = [];
   this.arrayacess = 0;
   this.comparsions = 0;
+  this.points = false;
   this.algorithm ="";
   this.i = 0;
   this.j = 0;
-  this.n = 50;
+  this.n = 200;
   this.current = 0;
   this.prevj = 0;
   this.x = this.n - 1;

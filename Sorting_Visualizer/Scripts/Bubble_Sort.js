@@ -5,6 +5,7 @@ class Bubble_sort extends Sorting {
     this.algorithm = "Bubble Sort";
     this.i=0;
     this.j=0; 
+    this.points = false;
   }
   
   sort() 
@@ -16,6 +17,7 @@ class Bubble_sort extends Sorting {
     else
     {
       this.preformsort();
+      if(this.points == false)
       this.ColorManager();
     }
   }
@@ -30,23 +32,23 @@ class Bubble_sort extends Sorting {
 
   ColorManager()
   {
-    for (let s =0; s<this.n;s++) 
+   for (let s =0; s<this.n;s++) 
+  {
+    if(s == this.j + 1)
     {
-      if(s == this.j + 1)
-      {
-        this.setIndexColor(s,255,0,0);
+      this.setIndexColor(s,255,0,0);
       }
-      else if(s>=this.n - this.i)
-      {
-        this.setIndexColor(s,0,255,0);
-      }
+       else if(s>=this.n - this.i)
+       {
+         this.setIndexColor(s,0,255,0);
+       }
       else
-      {
+     {
         this.setIndexColor(s,255,255,255);
-      }
+     }
      
-    }
   }
+   }
   preformsort()
   {
     for (this.i; this.i < this.n; this.i++) 
@@ -57,7 +59,10 @@ class Bubble_sort extends Sorting {
           {
             this.swap(this.j, this.j+1);
           }
+          this.comparsions++;
+          
           this.j++;
+          if(this.points == false)
           break;
         }
         if(this.endsearch())

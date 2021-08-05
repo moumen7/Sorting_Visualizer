@@ -22,7 +22,7 @@ class Selection_Sort extends Sorting {
       }
       else 
       { 
-       
+        if(this.points == false) 
         this.ColorManager();
         
         //get min
@@ -72,7 +72,8 @@ async getMin(){
           this.minElement = this.next;
           this.comparsions += 1;
           this.arrayacess += 2;
-          this.next++; 
+          this.next++;
+    if(this.points == false) 
     break;
   }
   this.indx = this.minElement;

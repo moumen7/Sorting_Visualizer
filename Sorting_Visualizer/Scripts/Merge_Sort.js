@@ -3,12 +3,12 @@ class Merge_Sort extends Sorting {
       super();
       this.setInitialColors(0, 0 ,150);
       this.algorithm = "Merge Sort";
-      this.i=0;
+      this.i=1;
       this.j=0;
       this.mid = 0;
       this.index = -1;
       this.indexarr = -1;
-      
+      this.sortedbool = false;
     }
     
     sort() 
@@ -19,6 +19,8 @@ class Merge_Sort extends Sorting {
       }
       else
       {
+        this.sortedbool = true;
+        
         this.preformsort();
         this.ColorManager();
       }
@@ -70,18 +72,37 @@ class Merge_Sort extends Sorting {
       this.arr[b] = this.temp;
     }
 
-    mergeSort(l ,r){
-      if (l >= r)
-         return;
-       this.mid = Math.floor( (l + r) /2);
+    mergeSort(l ,r)
+   {
+      
+   for (this.i; this.i<=this.n-1; this.i = 2*this.i)
+   {
+       // Pick starting point of different subarrays of current size
+       for (this.j; this.j<this.n-1; this.j += 2*this.i)
+       {
+           // Find ending point of left subarray. mid+1 is starting
+           // point of right
+           this.mid = Math.min(this.j + this.i - 1, this.n-1);
+ 
+           var right_end = Math.min(this.j + 2*this.i - 1, this.n-1);
+           // Merge Subarrays arr[left_start...mid] & arr[mid+1...right_end]
+           this.utilty_merge( this.j, right_end, this.mid);
+           break;
+       }
+        if(this.j>=this.n-1)
+        {
+        this.i = 2*this.i;
+        this.j =0;
+        }
+        else
+        this.j += 2* this.i;
+
+        break;
+   }
        
-       this.mergeSort(l, this.mid);
-       this.mergeSort( this.mid + 1, r);
-       this.utilty_merge( l, r, this.mid);
-    }
+  }
 
     utilty_merge( l, r, m){
-        
         var n1Size = m - l  + 2;
         var n2Size = r - (m+ 1) +2;
         var n1 = new Array(n1Size);
@@ -92,11 +113,13 @@ class Merge_Sort extends Sorting {
         //copying values
         for (let leftPtr = l; leftPtr <= this.mid; leftPtr++)
         {
+          this.arrayacess++;
             n1[++this.index] = this.arr[leftPtr];
         }
         this.index = -1;
         for (let rightPtr = this.mid + 1; rightPtr <= r; rightPtr++)
         {
+          this.arrayacess++;
             n2[++this.index] = this.arr[rightPtr];
         }
         //
@@ -116,9 +139,9 @@ class Merge_Sort extends Sorting {
                 this.arr[++this.indexarr] = n2[indexn2];
                 indexn2++;
             }
+            this.arrayacess++;
+            this.comparsions++;
         }
-        text('fuck ayman', 10, 30);
-        
     }
   }
   

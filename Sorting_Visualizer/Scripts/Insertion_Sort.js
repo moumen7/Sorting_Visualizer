@@ -4,6 +4,7 @@ class Insertion_sort extends Sorting {
       this.x = this.n - 1;
       this.setInitialColors(0, 0 ,150)
       this.algorithm = "Insertion Sort";
+      this.points = false;
     }
     sort() {
       if(this.sorted())
@@ -13,6 +14,7 @@ class Insertion_sort extends Sorting {
       else
       {
         this.preformsort();
+        if(this.points == false)
         this.ColorManager();
       }
     }
@@ -46,6 +48,7 @@ class Insertion_sort extends Sorting {
           {
             this.arr[this.j+1] = this.arr[this.j];
             this.j--;
+            if(this.points == false)
             break;
           }
           if(this.endsearch())
