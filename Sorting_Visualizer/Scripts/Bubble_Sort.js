@@ -47,7 +47,7 @@ class Bubble_Sort extends Sorting {
         this.setIndexColor(s,255,255,255);
      }
      
-  }
+   }
    }
   async preformsort()
   {
@@ -58,19 +58,23 @@ class Bubble_Sort extends Sorting {
         {
           if (this.arr[this.j] > this.arr[this.j+1])
           {
-            await this.swap(this.j, this.j+1);
+            if(!this.points)
+            await this.sleep(25); 
+            this.swap(this.j, this.j+1);
           }
           this.comparsions++;
+          this.arrayacess+=2;
         }
-        this.arrayacess+=2;
+       await this.sleep(25);
     }
   }
   
   async swap(a, b)
   {
-    await this.sleep(25);
+    
     this.temp = this.arr[a];
     this.arr[a] = this.arr[b];
     this.arr[b] = this.temp;
+    this.arrayacess+=4;
   }
 }
