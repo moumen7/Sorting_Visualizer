@@ -6,83 +6,80 @@ class Selection_Sort extends Sorting {
       this.prevMin = 0;
       this.setInitialColors(0, 0, 150);
       this.algorithm = "Selection Sort";
-      this.indx = 0;;
-      
+      this.min_idx = 0;
+      this.points = false;
+      for(let k = 0; k < this.n; k++) {
+        this.states.push(-1);
+      }
     }
-
     
-    async sort() {
-      this.setIndexColor(this.indx, 255, 255,255);
-      
-      if (this.j >= this.n || this.sortedbool == true) {
-        this.next = 0;
-        this.sortedbool = true;
-        
+
+    sort(){
+
+      if(this.finish)
+      {
         this.ColornOnFinish(0, 255, 0);
       }
-      else 
+      else
       { 
-        if(this.points == false) 
-        this.ColorManager();
-        
-        //get min
-        
-        this.getMin();
-        
-        if (this.next >= this.n){
-          this.swap(this.minElement, this.j);
-          this.j++;
-          this.next = this.j + 1;
-          this.minElement = this.j;
-        }   
-      
-    }
-    
-
-    }
-    
-    
- swap(a, b)
-{
-  this.temp = this.arr[a];
-  this.arr[a] = this.arr[b];
-  this.arr[b] = this.temp;
-}
-
-
-ColorManager(){
-      
-      this.setIndexColor(this.j, 255,0,0);
-      this.setIndexColor(this.j-1, 255,255,255);
-      this.setIndexColor(this.next, 255, 0, 0);
-      this.setIndexColor(this.next - 1, 255, 255, 255);
-      if (this.next >= this.n -1)
-      {
-        this.setIndexColor(this.n - 1, 255, 255, 255);
+        this.preformsort();
       }
+    }
+
+
+    async preformsort()
+    {
+        this.SelctionSort();
+    }
+
+     async SelctionSort() {
+
+      
+      for (let k  = 0; k < this.n-1; k++)
+      {
+        //being sorted now
+        this.states[k] = 1;
+        this.min_idx = k;
+        let min = await this.getMin(k);
+        this.states[min] = 0;
+        if (!this.points)
+          await this.sleep(100);
+        if (this.points)
+          await this.sleep(25);
+        this.swap(min, k);
+        this.states[k] = -1;
+        this.states[min] = -1;
+      }
+      this.finish = true;
+    }
+    
+
+
+
+
+
+async getMin(k){
+  for (let c = k + 1; c < this.n; c++){
+    if (this.arr[c] < this.arr[this.min_idx])
+        this.min_idx = c;
+        this.comparsions += 1;
+        this.arrayacess += 2;
+    }
+    return this.min_idx;
 }
 
-
-
-async getMin(){
-  
-  while (this.next < this.n)
-  {
-    if (this.arr[this.next] < this.arr[this.minElement])
-          this.minElement = this.next;
-          this.comparsions += 1;
-          this.arrayacess += 2;
-          this.next++;
-    if(this.points == false) 
-    break;
-  }
-  this.indx = this.minElement;
-  this.blink(this.indx, 255, 169,0);
+ColorManager(k){
+  var color = 255;
+    if(this.states[k] == 0) {
+        // min element
+        return color = '#ff002f';
+    }
+    else if (this.states[k] == 1) {
+        // Sorting bar
+        return color = '#1cff51';
+    }
+    else
+      return color;
 }
-
- sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
   }

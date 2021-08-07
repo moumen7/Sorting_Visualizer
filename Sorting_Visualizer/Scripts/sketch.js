@@ -29,18 +29,19 @@ function setspeedslider()
 function setsizeslider(min,max,value,step)
 {
   sizeslider = createSlider(min, max, value,step);
-  sizeslider.position(1100, 300);
+  sizeslider.position(1070, 300);
   sizeslider.style('width', '170px');
 }
 function setAlgocombo()
 {
   sel = createSelect();
-  sel.position(275, 67);
+  sel.position(350, 190);
   sel.option('Insertion');
   sel.option('Bubble');
   sel.option('Selection');
   sel.option('Merge');
   sel.option('Quick');
+  ;
   sel.selected('Insertion');
   
   sel.changed(OnchangeAlgo);
@@ -48,7 +49,7 @@ function setAlgocombo()
 function setmodecombo()
 {
   selmode = createSelect();
-  selmode.position(1175, 67);
+  selmode.position(1100, 190);
 
   selmode.option('Points');
   selmode.option('Rectangles');
@@ -87,6 +88,7 @@ function setup()
   current = selectedAlgo.arr[selectedAlgo.i];
 
   selectedAlgo.sort();
+  
 }
 function draw() {
   
@@ -95,18 +97,20 @@ function draw() {
   fill(255, 255, 255);
   frameRate(speedslider.value())
 
+  
   Onchangesize();
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
   + selectedAlgo.comparsions, 10 , 450);
-  //generating rects
-
-
+  
+  
+  
   for (let k = 0; k < selectedAlgo.n; k++) {
     if(selmode.value()=="Rectangles")
     {
-      stroke(0);
-    fill(selectedAlgo.colorsr[k], selectedAlgo.colorsg[k], selectedAlgo.colorsb[k]);
+    stroke(0);
+    var color = selectedAlgo.ColorManager(k);
+    fill(color);
     rect((k * 500) / selectedAlgo.n, 0, 500 / selectedAlgo.n, selectedAlgo.arr[k]);
     }
     else
@@ -114,7 +118,10 @@ function draw() {
     stroke(255);
     point(k/selectedAlgo.n * 500,selectedAlgo.arr[k] );
     }
+    
   }
+
+  
   
 }
 function Onchangesize()
@@ -125,6 +132,7 @@ function Onchangesize()
     factoryalgo(sel.value());
   }
 }
+
 
 function OnchangeAlgo() 
 {
@@ -158,7 +166,7 @@ function OnchangeMode()
   fill(255, 255, 255);
   sizeslider.remove();
   sizeslider = createSlider(min, max, mid, 2);
-  sizeslider.position(1100, 300);
+  sizeslider.position(1070, 300);
   sizeslider.style('width', '170px');
   //algorithm selection
   factoryalgo(sel.value());
@@ -176,6 +184,8 @@ function factoryalgo(x)
   selectedAlgo = new  Merge_Sort();
   else if(x == 'Quick')
   selectedAlgo = new  Quick_Sort();
+  else if(x == 'Bogo')
+  selectedAlgo = new  Bogo_Sort();
 
   selectedAlgo.n = sizeslider.value();
   
