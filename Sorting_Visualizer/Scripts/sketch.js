@@ -45,7 +45,9 @@ function setAlgocombo()
   sel.option('Bubble');
   sel.option('Selection');
   sel.option('Merge');
+  sel.option('Quick');
   sel.selected('Insertion');
+  
   sel.changed(mySelectEvent);
 }
 function setmodecombo()
@@ -68,11 +70,17 @@ function setup() {
   setsizeslider();
   setAlgocombo();
   setmodecombo();
-  selectedAlgo = new Insertion_sort();
+  selectedAlgo = new Quick_Sort();
+   
+
+  selectedAlgo.n = sizeslider.value();
 
   //generating values;
   for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(395));
   current = selectedAlgo.arr[selectedAlgo.i];
+
+  selectedAlgo.sort();
+  
 }
 
 function draw() {
@@ -105,9 +113,8 @@ function draw() {
     }
   }
  
-
-  //invoke sorting method
-  selectedAlgo.sort();
+   
+  
   
 }
 
@@ -124,6 +131,13 @@ function mySelectEvent()
 
   //pushing random values
   for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
+}
+
+
+function onChange(){
+  onselectmode();
+  //change n
+  setup();
 }
 function onselectmode() 
 {
@@ -160,6 +174,9 @@ function factoryalgo(x)
   selectedAlgo = new  Selection_Sort();
   else if(x == 'Merge')
   selectedAlgo = new  Merge_Sort();
+
+  else if(x == 'Quick')
+  selectedAlgo = new  Quick_Sort();
 
   if(selmode.value() == "Points")
   selectedAlgo.points = true

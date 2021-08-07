@@ -17,7 +17,7 @@ class Selection_Sort extends Sorting {
       if (this.j >= this.n || this.sortedbool == true) {
         this.next = 0;
         this.sortedbool = true;
-        await this.sleep(1300);
+        
         this.ColornOnFinish(0, 255, 0);
       }
       else 

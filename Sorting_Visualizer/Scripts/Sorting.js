@@ -31,7 +31,7 @@ class Sorting
   
   }
    
-  sort(){
+   sort(){
     throw new Error("Impelemenation not found");
   }
 
@@ -80,4 +80,5 @@ class Sorting
   else
       this.setIndexColor(index, 0,0, 150);
   }
+  
 }

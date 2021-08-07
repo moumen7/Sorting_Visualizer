@@ -1,4 +1,4 @@
-class Insertion_sort extends Sorting {
+class Insertion_Sort extends Sorting {
     constructor() {
       super();
       this.x = this.n - 1;

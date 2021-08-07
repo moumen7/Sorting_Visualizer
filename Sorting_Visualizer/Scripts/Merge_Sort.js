@@ -104,7 +104,7 @@ class Merge_Sort extends Sorting {
 
     utilty_merge( l, r, m){
         var n1Size = m - l  + 2;
-        var n2Size = r - (m+ 1) +2;
+        var n2Size = r - ( m+ 1) +2;
         var n1 = new Array(n1Size);
         var n2 = new Array(n2Size);
         n1[n1Size - 1] = Number.MAX_VALUE;
