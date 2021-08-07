@@ -1,4 +1,4 @@
-class Bubble_sort extends Sorting {
+class Bubble_Sort extends Sorting {
   constructor() {
     super();
     this.setInitialColors(0, 0 ,150);
@@ -8,7 +8,7 @@ class Bubble_sort extends Sorting {
     this.points = false;
   }
   
-  sort() 
+  async sort() 
   {
     if(this.sorted())
     {
@@ -43,47 +43,32 @@ class Bubble_sort extends Sorting {
          this.setIndexColor(s,0,255,0);
        }
       else
-     {
+      {
         this.setIndexColor(s,255,255,255);
      }
      
   }
    }
-  preformsort()
+  async preformsort()
   {
-    for (this.i; this.i < this.n; this.i++) 
-    {        
-        while (!this.endsearch())
+    text("fuck ayman", 80 , 450);
+    for (this.i =0; this.i < this.n - 1; this.i++) 
+    {
+      for (this.j = 0; this.j < this.n-this.i-1; this.j++)
         {
           if (this.arr[this.j] > this.arr[this.j+1])
           {
-            this.swap(this.j, this.j+1);
+            await this.swap(this.j, this.j+1);
           }
           this.comparsions++;
-          
-          this.j++;
-          if(this.points == false)
-          break;
-        }
-        if(this.endsearch())
-        {
-           this.i++;
-           this.j = 0;
         }
         this.arrayacess+=2;
-      break;
     }
   }
-  endsearch()
+  
+  async swap(a, b)
   {
-   
-    if(this.j >= this.n-this.i-1)
-    return true;
-    else
-    return false;
-  }
-  swap(a, b)
-  {
+    await this.sleep(25);
     this.temp = this.arr[a];
     this.arr[a] = this.arr[b];
     this.arr[b] = this.temp;

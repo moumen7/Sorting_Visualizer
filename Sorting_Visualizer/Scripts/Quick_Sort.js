@@ -42,7 +42,6 @@ class Quick_Sort extends Sorting {
       }
       
       let index = await this.partition(start, end);
-      text("fuck ayman", 30, 10);
       await Promise.all([this.quickSort(start, index-1), this.quickSort(index+1, end)]);
   }
 
@@ -66,9 +65,7 @@ class Quick_Sort extends Sorting {
   }
     
 
-sleep(ms) {
-   return new Promise(resolve => setTimeout(resolve, ms));
-  }
+
 
   async swap(a, b) {
     await this.sleep(100);
@@ -76,6 +73,6 @@ sleep(ms) {
     this.arr[a] = this.arr[b];
     this.arr[b] = t;
     this.arrayacess += 4;
+ }
 }
-  }
   
