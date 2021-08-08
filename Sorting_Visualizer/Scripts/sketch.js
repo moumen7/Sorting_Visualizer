@@ -41,7 +41,7 @@ function setAlgocombo()
   sel.option('Selection');
   sel.option('Merge');
   sel.option('Quick');
-  ;
+  
   sel.selected('Insertion');
   
   sel.changed(OnchangeAlgo);
