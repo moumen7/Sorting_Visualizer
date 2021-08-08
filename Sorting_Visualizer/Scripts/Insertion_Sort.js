@@ -5,8 +5,11 @@ class Insertion_Sort extends Sorting {
       this.setInitialColors(0, 0 ,150)
       this.algorithm = "Insertion Sort";
       this.points = false;
+      for(let k = 0; k < this.n; k++) {
+        this.states.push(-1);
+      }
     }
-    sort() {
+    async sort() {
       if(this.sorted())
       {
         this.ColornOnFinish(0, 255, 0);
@@ -14,63 +17,58 @@ class Insertion_Sort extends Sorting {
       else
       {
         this.preformsort();
-        if(this.points == false)
-        this.ColorManager();
+        
       }
     }
-    sorted() 
+     sorted() 
     { 
       if(this.i>=this.n)
         return true;
       else
         return false;
     }
-    ColorManager()
+    ColorManager(k){
+      var color = 255;
+        if(this.states[k] == 0) {
+            // min element
+            return color = '#ff002f';
+        }
+        else if (this.states[k] == 1) {
+            // Sorting bar
+            return color = '#1cff51';
+        }
+        else
+          return color;
+    }
+    async preformsort()
     {
-      for (let s =0; s<this.n;s++) 
+      for (this.i = 1; this.i < this.n; this.i++)
       {
-        if(s == this.j + 1)
+        this.current = this.arr[this.i];
+        this.j = this.i - 1;
+        /* Move elements of arr[0..i-1], that are
+        greater than key, to one position ahead
+        of their current position */
+        this.states[this.i] = 1
+        while (this.j >= 0 && this.arr[this.j] > this.current)
         {
-          this.setIndexColor(s,255,0,0);
+            this.comparsions++;
+            this.arr[this.j + 1] = this.arr[this.j];
+            this.j = this.j - 1;
+            this.arrayacess+=2;
+            this.states[this.j] = 0;
+            if(!this.points)
+            await this.sleep(25);
+            this.states[this.j] = -1;
         }
-        else if(s<=this.i)
-        {
-          this.setIndexColor(s,255,255,255);
-        }
-       
-      }
-    }
-    preformsort()
-    {
-      for (this.i; this.i < this.n; this.i++) 
-      {        
-          while (!this.endsearch()) 
-          {
-            this.arr[this.j+1] = this.arr[this.j];
-            this.j--;
-            if(this.points == false)
-            break;
-          }
-          if(this.endsearch())
-          {
-             this.arr[this.j+1] = this.current;
-             this.i++;
-             this.current = this.arr[this.i];
-             this.j = this.i-1;
-          }
-          this.arrayacess+=2;
-        break;
-      }
-    }
-    endsearch()
-    {
-      this.comparsions++;
-      this.arrayacess++;
-      if(this.j <= -1 ||  (this.current >= this.arr[this.j]))
-      return true;
-      else
-      return false;
+        
+        this.arrayacess++;
+        this.arr[this.j + 1] = this.current;
+        await this.sleep(25);
+        this.states[this.i] = -1
 
     }
+    }
+   
   }
   

@@ -17,6 +17,8 @@ class Bubble_Sort extends Sorting {
     else
     {
       this.preformsort();
+      if(this.points == false)
+      this.ColorManager();
     }
   }
 
@@ -47,25 +49,43 @@ class Bubble_Sort extends Sorting {
      
    }
    }
+   ColorManager(k){
+    var color = 255;
+      if(this.states[k] == 0) {
+          // min element
+          return color = '#ff002f';
+      }
+      else if (this.states[k] == 1) {
+          // Sorting bar
+          return color = '#1cff51';
+      }
+      else
+        return color;
+  }
   async preformsort()
   {
     text("fuck ayman", 80 , 450);
     for (this.i =0; this.i < this.n - 1; this.i++) 
     {
-      for (this.j = 0; this.j < this.n-this.i-1; this.j++)
+     
+       for (this.j = 0; this.j < this.n-this.i-1; this.j++)
         {
+          this.states[this.j] = 0
           if (this.arr[this.j] > this.arr[this.j+1])
           {
             if(!this.points)
             await this.sleep(25); 
             this.swap(this.j, this.j+1);
           }
+
           this.comparsions++;
           this.arrayacess+=2;
+          this.states[this.j] = -1
         }
+      this.states[this.n-this.i - 1] = 1
        await this.sleep(25);
     }
+    this.states[0] = 1
   }
-  
   
 }

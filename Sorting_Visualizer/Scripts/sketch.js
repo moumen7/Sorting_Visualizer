@@ -63,7 +63,7 @@ function invokesizeslider()
   if(selmode.value() == "Points")
   {
     min = 200;
-    max = 2000;
+    max = 20000;
     val = 600;
     step = 20;
   }
