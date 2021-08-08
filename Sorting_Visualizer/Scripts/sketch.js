@@ -79,7 +79,7 @@ function setup()
   setmodecombo();
   setspeedslider();
   invokesizeslider();
-  selectedAlgo = new Quick_Sort();
+  selectedAlgo = new Insertion_Sort();
   selectedAlgo.n = sizeslider.value();
 
   //generating values;

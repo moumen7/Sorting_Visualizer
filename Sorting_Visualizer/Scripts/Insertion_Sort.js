@@ -6,7 +6,7 @@ class Insertion_Sort extends Sorting {
       this.algorithm = "Insertion Sort";
       this.points = false;
     }
-    sort() {
+    async sort() {
       if(this.sorted())
       {
         this.ColornOnFinish(0, 255, 0);
@@ -18,14 +18,14 @@ class Insertion_Sort extends Sorting {
         this.ColorManager();
       }
     }
-    sorted() 
+     sorted() 
     { 
       if(this.i>=this.n)
         return true;
       else
         return false;
     }
-    ColorManager()
+     ColorManager()
     {
       for (let s =0; s<this.n;s++) 
       {
@@ -40,37 +40,30 @@ class Insertion_Sort extends Sorting {
        
       }
     }
-    preformsort()
+    async preformsort()
     {
-      for (this.i; this.i < this.n; this.i++) 
-      {        
-          while (!this.endsearch()) 
-          {
-            this.arr[this.j+1] = this.arr[this.j];
-            this.j--;
-            if(this.points == false)
-            break;
-          }
-          if(this.endsearch())
-          {
-             this.arr[this.j+1] = this.current;
-             this.i++;
-             this.current = this.arr[this.i];
-             this.j = this.i-1;
-          }
-          this.arrayacess+=2;
-        break;
-      }
-    }
-    endsearch()
-    {
-      this.comparsions++;
-      this.arrayacess++;
-      if(this.j <= -1 ||  (this.current >= this.arr[this.j]))
-      return true;
-      else
-      return false;
+      for (this.i = 1; this.i < this.n; this.i++)
+      {
+        this.current = this.arr[this.i];
+        this.j = this.i - 1;
+        /* Move elements of arr[0..i-1], that are
+        greater than key, to one position ahead
+        of their current position */
+        while (this.j >= 0 && this.arr[this.j] > this.current)
+        {
+            this.comparsions++;
+            this.arr[this.j + 1] = this.arr[this.j];
+            this.j = this.j - 1;
+            this.arrayacess+=2;
+            if(!this.points)
+            await this.sleep(25);
+        }
+        this.arrayacess++;
+        this.arr[this.j + 1] = this.current;
+        await this.sleep(25);
 
     }
+    }
+   
   }
   

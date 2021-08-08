@@ -11,7 +11,7 @@ class Merge_Sort extends Sorting {
       this.sortedbool = false;
     }
     
-    sort() 
+    async sort() 
     {
       if(this.sorted())
       {
@@ -54,9 +54,9 @@ class Merge_Sort extends Sorting {
        
       }
     }
-    preformsort()
+    async preformsort()
     {
-        this.mergeSort(0, this.n-1);
+        await this.mergeSort(0, this.n-1);
         fill(255,255,255);
         
     }
@@ -65,44 +65,37 @@ class Merge_Sort extends Sorting {
         text('end search', 10, 30);
         return true;
     }
-    swap(a, b)
+  async swap(a, b)
     {
       this.temp = this.arr[a];
       this.arr[a] = this.arr[b];
       this.arr[b] = this.temp;
     }
 
-    mergeSort(l ,r)
+  async mergeSort(l ,r)
    {
       
-   for (this.i; this.i<=this.n-1; this.i = 2*this.i)
+   for (this.i=1; this.i<=this.n-1; this.i = 2*this.i)
    {
        // Pick starting point of different subarrays of current size
-       for (this.j; this.j<this.n-1; this.j += 2*this.i)
+       for (this.j=0; this.j<this.n-1; this.j += 2*this.i)
        {
            // Find ending point of left subarray. mid+1 is starting
            // point of right
-           this.mid = Math.min(this.j + this.i - 1, this.n-1);
+           this.mid =  Math.min(this.j + this.i - 1, this.n-1);
  
            var right_end = Math.min(this.j + 2*this.i - 1, this.n-1);
            // Merge Subarrays arr[left_start...mid] & arr[mid+1...right_end]
-           this.utilty_merge( this.j, right_end, this.mid);
-           break;
+           await this.utilty_merge( this.j, right_end, this.mid);
+           if(!this.points)
+           await this.sleep(25);
        }
-        if(this.j>=this.n-1)
-        {
-        this.i = 2*this.i;
-        this.j =0;
-        }
-        else
-        this.j += 2* this.i;
-
-        break;
+       await this.sleep(25);
    }
        
   }
 
-    utilty_merge( l, r, m){
+    async utilty_merge( l, r, m){
         var n1Size = m - l  + 2;
         var n2Size = r - ( m+ 1) +2;
         var n1 = new Array(n1Size);
@@ -141,6 +134,8 @@ class Merge_Sort extends Sorting {
             }
             this.arrayacess++;
             this.comparsions++;
+            if(!this.points)
+            await this.sleep(25);
         }
     }
   }
