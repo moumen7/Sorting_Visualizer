@@ -41,7 +41,7 @@ function setAlgocombo()
   sel.option('Selection');
   sel.option('Merge');
   sel.option('Quick');
-  ;
+  
   sel.selected('Insertion');
   
   sel.changed(OnchangeAlgo);
@@ -63,7 +63,7 @@ function invokesizeslider()
   if(selmode.value() == "Points")
   {
     min = 200;
-    max = 2000;
+    max = 20000;
     val = 600;
     step = 20;
   }
@@ -80,7 +80,7 @@ function setup()
   setmodecombo();
   setspeedslider();
   invokesizeslider();
-  selectedAlgo = new Insertion_Sort();
+  selectedAlgo = new Quick_Sort();
   selectedAlgo.n = sizeslider.value();
 
   //generating values;

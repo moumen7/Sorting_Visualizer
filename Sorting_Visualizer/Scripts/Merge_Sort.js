@@ -22,7 +22,6 @@ class Merge_Sort extends Sorting {
         this.sortedbool = true;
         
         this.preformsort();
-        this.ColorManager();
       }
       
     }
@@ -35,24 +34,18 @@ class Merge_Sort extends Sorting {
      return false;
     }
   
-    ColorManager()
-    {
-      for (let s =0; s<this.n;s++) 
-      {
-        if(s == this.j + 1)
-        {
-          this.setIndexColor(s,255,0,0);
+    ColorManager(k){
+      var color = 255;
+        if(this.states[k] == 0) {
+            // min element
+            return color = '#ff002f';
         }
-        else if(s>=this.n - this.i)
-        {
-          this.setIndexColor(s,0,255,0);
+        else if (this.states[k] == 1) {
+            // Sorting bar
+            return color = '#1cff51';
         }
         else
-        {
-          this.setIndexColor(s,255,255,255);
-        }
-       
-      }
+          return color;
     }
     async preformsort()
     {
@@ -108,12 +101,18 @@ class Merge_Sort extends Sorting {
         {
           this.arrayacess++;
             n1[++this.index] = this.arr[leftPtr];
+            this.states[leftPtr] = 0
+            if(!this.points)
+            await this.sleep(25);
         }
         this.index = -1;
         for (let rightPtr = this.mid + 1; rightPtr <= r; rightPtr++)
         {
           this.arrayacess++;
             n2[++this.index] = this.arr[rightPtr];
+            this.states[rightPtr] = 1
+           
+            await this.sleep(25);
         }
         //
         this.indexarr = l-1;
@@ -132,6 +131,7 @@ class Merge_Sort extends Sorting {
                 this.arr[++this.indexarr] = n2[indexn2];
                 indexn2++;
             }
+            this.states[this.indexarr] = -1
             this.arrayacess++;
             this.comparsions++;
             if(!this.points)
