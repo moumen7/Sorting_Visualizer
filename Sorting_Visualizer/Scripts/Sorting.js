@@ -28,6 +28,7 @@ class Sorting
   this.prevj = 0;
   this.x = this.n - 1;
   this.blinker = 0;
+  this.states = [];
   
   }
    
@@ -81,6 +82,14 @@ class Sorting
       this.setIndexColor(index, 0,0, 150);
   }
 
+  async swap(a, b)
+  {
+    
+    this.temp = this.arr[a];
+    this.arr[a] = this.arr[b];
+    this.arr[b] = this.temp;
+    this.arrayacess+=4;
+  }
   sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
    }

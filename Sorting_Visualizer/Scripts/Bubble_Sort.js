@@ -17,8 +17,6 @@ class Bubble_Sort extends Sorting {
     else
     {
       this.preformsort();
-      if(this.points == false)
-      this.ColorManager();
     }
   }
 
@@ -69,12 +67,5 @@ class Bubble_Sort extends Sorting {
     }
   }
   
-  async swap(a, b)
-  {
-    
-    this.temp = this.arr[a];
-    this.arr[a] = this.arr[b];
-    this.arr[b] = this.temp;
-    this.arrayacess+=4;
-  }
+  
 }
