@@ -1,4 +1,4 @@
-﻿# Sorting_Visualizer
+﻿# Sorting Visualizer
  <p align="middle">
  <img src="https://user-images.githubusercontent.com/58152328/132061249-d6fc7d12-3274-4266-b163-83ef2c717a61.png" width="350" height="300">
 </p>
@@ -10,6 +10,7 @@
  
 - [Description](#description)
 - [Topics used for implementation](#topics-used-for-implementation)
+- [Additional Info.] (#additional-information)
 
 ----
 
@@ -36,5 +37,10 @@
 ### Topics used for implementation.  
 - P5.js
 - Particles.js
-- Basic-Factory Method Design Pattern.
+- Basic-Factory Method Design Pattern.  
+---  
+## Additional Information  
+- This is the first version of the project, Which gives the core and fundamental sorting algorithms a visualiztion.
+- More Algorithms to be added soon before deploying.
+- More features will be added in the next version.
 
