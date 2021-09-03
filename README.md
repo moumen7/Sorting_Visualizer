@@ -19,6 +19,8 @@
 ---
 
 ### Dynamic-Ready, Built artistically, And offers visualization options.
+
+
 <p align="middle">
  <img src="https://user-images.githubusercontent.com/58152328/132061512-77ad5b4f-9b7d-4e58-a1f3-ed644180e35e.PNG" width="720" height="432">
  ---
