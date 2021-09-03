@@ -10,7 +10,7 @@
  
 - [Description](#description)
 - [Topics used for implementation](#topics-used-for-implementation)
-- [Additional Info.] (#additional-information)
+- [Additional Info.](#additional-information)
 
 ----
 
