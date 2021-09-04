@@ -9,7 +9,7 @@
  ### Table of Contents.
  
 - [Description](#description)
-- [Sorting algorithms implemented so far.](#Sorting-algorithms-implemented-so-far.)
+- [Sorting algorithms implemented so far.](#sorting-algorithms-implemented-so-far.)
 - [Topics used for implementation](#topics-used-for-implementation)
 - [Additional Info.](#additional-information)
 
