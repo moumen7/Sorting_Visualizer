@@ -9,6 +9,7 @@
  ### Table of Contents.
  
 - [Description](#description)
+- [Sorting algorithms implemented so far.](#Sorting-algorithms-implemented-so-far.)
 - [Topics used for implementation](#topics-used-for-implementation)
 - [Additional Info.](#additional-information)
 
@@ -33,7 +34,13 @@
 - Well structured, Gives the ability to add a new algorithm in just few minutes.
 - Full control of the main thread using All-Async modules.
 ---
-
+### Sorting algorithms implemented so far.
+- [Bubble Sort](https://www.geeksforgeeks.org/bubble-sort/)
+- [Insertion Sort](https://www.geeksforgeeks.org/insertion-sort/)
+- [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
+- [QuickSort](https://www.geeksforgeeks.org/quick-sort/)
+- [Merge Sort](https://www.geeksforgeeks.org/merge-sort/) 
+---
 ### Topics used for implementation.  
 - P5.js
 - Particles.js
