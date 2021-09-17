@@ -4,84 +4,67 @@ class Selection_Sort extends Sorting {
       this.x = this.n-1;
       this.next = this.j + 1;
       this.prevMin = 0;
-      this.setInitialColors(0, 0, 150);
       this.algorithm = "Selection Sort";
-      this.indx = 0;;
-      
-    }
-
-    
-    async sort() {
-      this.setIndexColor(this.indx, 255, 255,255);
-      
-      if (this.j >= this.n || this.sortedbool == true) {
-        this.next = 0;
-        this.sortedbool = true;
-        await this.sleep(1300);
-        this.ColornOnFinish(0, 255, 0);
+      this.min_idx = 0;
+      this.points = false;
+      for(let k = 0; k < this.n; k++) {
+        this.states.push(-1);
       }
-      else 
-      { 
-        if(this.points == false) 
-        this.ColorManager();
-        
-        //get min
-        
-        this.getMin();
-        
-        if (this.next >= this.n){
-          this.swap(this.minElement, this.j);
-          this.j++;
-          this.next = this.j + 1;
-          this.minElement = this.j;
-        }   
-      
     }
     
 
+    async sort(){
+        await this.preformsort();
+        await this.sorted()
     }
-    
-    
- swap(a, b)
-{
-  this.temp = this.arr[a];
-  this.arr[a] = this.arr[b];
-  this.arr[b] = this.temp;
-}
 
 
-ColorManager(){
-      
-      this.setIndexColor(this.j, 255,0,0);
-      this.setIndexColor(this.j-1, 255,255,255);
-      this.setIndexColor(this.next, 255, 0, 0);
-      this.setIndexColor(this.next - 1, 255, 255, 255);
-      if (this.next >= this.n -1)
+    async preformsort()
+    {
+        await this.SelctionSort();
+    }
+
+     async SelctionSort() {
+      for (let k  = 0; k < this.n-1; k++)
       {
-        this.setIndexColor(this.n - 1, 255, 255, 255);
+        //being sorted now
+        this.states[k] = 1;
+        this.min_idx = k;
+        let min = await this.getMin(k);
+        this.states[min] = 0;
+        await this.sleep(this.sleepfactor);
+        this.swap(min, k);
+        this.states[k] = -1;
+        this.states[min] = -1;
       }
-}
+      this.finish = true;
+    }
+    
 
 
+async getMin(k){
+  for (let c = k + 1; c < this.n; c++){
+    this.states[c] = 0;
+    if (this.arr[c] < this.arr[this.min_idx])
+    {
+      if(this.min_idx!=k)
+      {
+        this.states[this.min_idx] = -1;
+      }
+        this.min_idx = c;
+        this.states[this.min_idx] = 0;
+    }
 
-async getMin(){
-  
-  while (this.next < this.n)
-  {
-    if (this.arr[this.next] < this.arr[this.minElement])
-          this.minElement = this.next;
-          this.comparsions += 1;
-          this.arrayacess += 2;
-          this.next++;
-    if(this.points == false) 
-    break;
-  }
-  this.indx = this.minElement;
-  this.blink(this.indx, 255, 169,0);
-}
-
- sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+    this.comparsions += 1;
+    this.arrayacess += 2;
+    if (!this.points)
+    await this.sleep(this.sleepfactor);
+    if(c!=this.min_idx)
+      this.states[c] = -1;
+    
+    }
+    
+    return this.min_idx;
 }
 
 

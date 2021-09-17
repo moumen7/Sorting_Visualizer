@@ -14,23 +14,79 @@ canvas {
   text-align: center;
   position: fixed;
   left: 0;
-  margin-top: -10px;
+  margin-top: 60px;
+  margin-left: -10px;
   width: 100%;
   font-size: xx-large;
   font-family: 'Trebuchet MS', sans-serif;
-  
 }
+
+.speed{
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  margin-left: -418px;
+  margin-top: 250px;
+  width: 100%;
+  font-size: medium;
+  font-family: 'Trebuchet MS', sans-serif;
+
+}
+.size{
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  margin-left: 343px;
+  margin-top: 250px;
+  width: 100%;
+  font-size: medium;
+  font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+.algo{
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  margin-left: -378px;
+  margin-top: 140px;
+  width: 100%;
+  font-size: medium;
+  font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+.mode{
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  margin-left: 376px;
+  margin-top: 140px;
+  width: 100%;
+  font-size: medium;
+  font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+
 
 .square {
   height: 470px;
   width: 510px;
   background-color:whitesmoke;
-  
 }
 
 .background {
   height: 100%;
   background: #000000 ;
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   color: #ffffff;
   
 }
@@ -39,10 +95,14 @@ canvas {
   src: url(titlefont.ttf);
 }
 
-
+.logo{
+  position: fixed;
+  margin-left: 720px;
+  margin-top: 30px;
+}
 .footer {
   position: fixed;
-  left: 0;
+  left: -10px;
   bottom: 0;
   width: 100%;
   color: white;
