@@ -1,68 +1,23 @@
 class Merge_Sort extends Sorting {
     constructor() {
       super();
-      this.setInitialColors(0, 0 ,150);
       this.algorithm = "Merge Sort";
       this.i=1;
       this.j=0;
       this.mid = 0;
       this.index = -1;
       this.indexarr = -1;
-      this.sortedbool = false;
     }
     
     async sort() 
-    {
-      if(this.sorted())
-      {
-        this.ColornOnFinish(0, 255, 0);
-      }
-      else
-      {
-        this.sortedbool = true;
-        
-        this.preformsort();
-      }
-      
+    {   
+        await this.preformsort();
+        await this.sorted();
     }
-  
-  
-    sorted() 
-    { 
-      if(this.i>=this.n)
-        return true;
-     return false;
-    }
-  
-    ColorManager(k){
-      var color = 255;
-        if(this.states[k] == 0) {
-            // min element
-            return color = '#ff002f';
-        }
-        else if (this.states[k] == 1) {
-            // Sorting bar
-            return color = '#1cff51';
-        }
-        else
-          return color;
-    }
+    
     async preformsort()
     {
         await this.mergeSort(0, this.n-1);
-        fill(255,255,255);
-        
-    }
-    endsearch()
-    {
-        text('end search', 10, 30);
-        return true;
-    }
-  async swap(a, b)
-    {
-      this.temp = this.arr[a];
-      this.arr[a] = this.arr[b];
-      this.arr[b] = this.temp;
     }
 
   async mergeSort(l ,r)
@@ -81,9 +36,9 @@ class Merge_Sort extends Sorting {
            // Merge Subarrays arr[left_start...mid] & arr[mid+1...right_end]
            await this.utilty_merge( this.j, right_end, this.mid);
            if(!this.points)
-           await this.sleep(25);
+           await this.sleep(this.sleepfactor);
        }
-       await this.sleep(25);
+       await this.sleep(this.sleepfactor);
    }
        
   }
@@ -103,7 +58,7 @@ class Merge_Sort extends Sorting {
             n1[++this.index] = this.arr[leftPtr];
             this.states[leftPtr] = 0
             if(!this.points)
-            await this.sleep(25);
+            await this.sleep(this.sleepfactor);
         }
         this.index = -1;
         for (let rightPtr = this.mid + 1; rightPtr <= r; rightPtr++)
@@ -112,7 +67,7 @@ class Merge_Sort extends Sorting {
             n2[++this.index] = this.arr[rightPtr];
             this.states[rightPtr] = 1
            
-            await this.sleep(25);
+            await this.sleep(this.sleepfactor);
         }
         //
         this.indexarr = l-1;
@@ -135,7 +90,7 @@ class Merge_Sort extends Sorting {
             this.arrayacess++;
             this.comparsions++;
             if(!this.points)
-            await this.sleep(25);
+            await this.sleep(this.sleepfactor);
         }
     }
   }

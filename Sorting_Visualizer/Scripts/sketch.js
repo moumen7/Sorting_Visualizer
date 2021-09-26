@@ -19,6 +19,8 @@ window.onload = function() {
   });
 };
 
+
+
 function setspeedslider()
 {
   speedslider = createSlider(1, 60, 30, 2);
@@ -63,7 +65,7 @@ function invokesizeslider()
   if(selmode.value() == "Points")
   {
     min = 200;
-    max = 20000;
+    max = 6000;
     val = 600;
     step = 20;
   }
@@ -72,7 +74,7 @@ function invokesizeslider()
 }
 function setup() 
 {
-  createCanvas(500, 460);
+  canvas = createCanvas(500, 460);
   frameRate(30);
   fill(255, 255, 255);
   text("Speed",10,10);
@@ -80,7 +82,7 @@ function setup()
   setmodecombo();
   setspeedslider();
   invokesizeslider();
-  selectedAlgo = new Quick_Sort();
+  selectedAlgo = new Insertion_Sort();
   selectedAlgo.n = sizeslider.value();
 
   //generating values;
@@ -96,14 +98,13 @@ function draw() {
   background(0);
   fill(255, 255, 255);
   frameRate(speedslider.value())
-
+  var ratio =  (60 - speedslider.value()) / 60 * 10;
+  selectedAlgo.sleepfactor = ratio * ratio ;
   
   Onchangesize();
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
   + selectedAlgo.comparsions, 10 , 450);
-  
-  
   
   for (let k = 0; k < selectedAlgo.n; k++) {
     if(selmode.value()=="Rectangles")
@@ -111,11 +112,13 @@ function draw() {
     stroke(0);
     var color = selectedAlgo.ColorManager(k);
     fill(color);
+
     rect((k * 500) / selectedAlgo.n, 0, 500 / selectedAlgo.n, selectedAlgo.arr[k]);
     }
     else
     {
-    stroke(255);
+    stroke(255, 204, 100);
+    stroke('white');
     point(k/selectedAlgo.n * 500,selectedAlgo.arr[k] );
     }
     
@@ -160,7 +163,7 @@ function OnchangeMode()
   if(selmode.value()=="Points")
   {
     min = 200;
-    max = 20000;
+    max = 6000;
     mid = 250;
   }
   fill(255, 255, 255);
@@ -171,6 +174,7 @@ function OnchangeMode()
   //algorithm selection
   factoryalgo(sel.value());
 }
+
 
 function factoryalgo(x)
 {

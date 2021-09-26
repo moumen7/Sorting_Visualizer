@@ -2,7 +2,6 @@ class Insertion_Sort extends Sorting {
     constructor() {
       super();
       this.x = this.n - 1;
-      this.setInitialColors(0, 0 ,150)
       this.algorithm = "Insertion Sort";
       this.points = false;
       for(let k = 0; k < this.n; k++) {
@@ -10,36 +9,11 @@ class Insertion_Sort extends Sorting {
       }
     }
     async sort() {
-      if(this.sorted())
-      {
-        this.ColornOnFinish(0, 255, 0);
-      }
-      else
-      {
-        this.preformsort();
-        
-      }
+        await this.preformsort();
+        await this.sorted();
     }
-     sorted() 
-    { 
-      if(this.i>=this.n)
-        return true;
-      else
-        return false;
-    }
-    ColorManager(k){
-      var color = 255;
-        if(this.states[k] == 0) {
-            // min element
-            return color = '#ff002f';
-        }
-        else if (this.states[k] == 1) {
-            // Sorting bar
-            return color = '#1cff51';
-        }
-        else
-          return color;
-    }
+
+    
     async preformsort()
     {
       for (this.i = 1; this.i < this.n; this.i++)
@@ -58,13 +32,13 @@ class Insertion_Sort extends Sorting {
             this.arrayacess+=2;
             this.states[this.j] = 0;
             if(!this.points)
-            await this.sleep(25);
+            await this.sleep(this.sleepfactor);
             this.states[this.j] = -1;
         }
         
         this.arrayacess++;
         this.arr[this.j + 1] = this.current;
-        await this.sleep(25);
+        await this.sleep(this.sleepfactor);
         this.states[this.i] = -1
 
     }
