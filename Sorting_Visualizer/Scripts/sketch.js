@@ -24,6 +24,7 @@ window.onload = function() {
 function setspeedslider()
 {
   speedslider = createSlider(1, 60, 30, 2);
+  speedslider.id("speedSlider");
   speedslider.position(300, 300);
   speedslider.style('width', '170px');
 }
@@ -31,12 +32,14 @@ function setspeedslider()
 function setsizeslider(min,max,value,step)
 {
   sizeslider = createSlider(min, max, value,step);
+  sizeslider.id("sizeSlider");
   sizeslider.position(1070, 300);
   sizeslider.style('width', '170px');
 }
 function setAlgocombo()
 {
   sel = createSelect();
+  sel.id("algoCombo");
   sel.position(350, 190);
   sel.option('Insertion');
   sel.option('Bubble');
@@ -51,6 +54,7 @@ function setAlgocombo()
 function setmodecombo()
 {
   selmode = createSelect();
+  selmode.id("modeCombo");
   selmode.position(1100, 190);
 
   selmode.option('Points');
@@ -75,9 +79,10 @@ function invokesizeslider()
 function setup() 
 {
   canvas = createCanvas(500, 460);
+  canvas.id("sortingCanvas");
   frameRate(30);
   fill(255, 255, 255);
-  text("Speed",10,10);
+  text("Speed",10,10)
   setAlgocombo();
   setmodecombo();
   setspeedslider();
