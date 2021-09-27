@@ -3,8 +3,7 @@ let sel;
 let selmode;
 let speedslider;
 let sizeslider;
-let h;
-let w;
+
 
 window.onload = function() {
   Particles.init({
@@ -78,9 +77,12 @@ function invokesizeslider()
 
   setsizeslider(min,max,val,step);
 }
+
 function setup() 
 {
-  canvas = createCanvas(500, 460);
+  var h = window.innerHeight*2/3;
+  var w= window.innerWidth/2;
+  canvas = createCanvas(w, h);
   canvas.id("sortingCanvas");
   frameRate(30);
   fill(255, 255, 255);
@@ -97,11 +99,13 @@ function setup()
   current = selectedAlgo.arr[selectedAlgo.i];
 
   selectedAlgo.sort();
-  
 }
 function draw() {
   
   //ui
+  var h = window.innerHeight*2/3;
+  var w= window.innerWidth/2;
+  canvas = createCanvas(w, h);
   background(0);
   fill(255, 255, 255);
   frameRate(speedslider.value())
@@ -111,7 +115,7 @@ function draw() {
   Onchangesize();
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
-  + selectedAlgo.comparsions, 10 , 450);
+  + selectedAlgo.comparsions, 10 , h-10);
   
   for (let k = 0; k < selectedAlgo.n; k++) {
     if(selmode.value()=="Rectangles")
@@ -120,7 +124,7 @@ function draw() {
     var color = selectedAlgo.ColorManager(k);
     fill(color);
 
-    rect((k * 500) / selectedAlgo.n, 0, 500 / selectedAlgo.n, selectedAlgo.arr[k]);
+    rect((k * window.innerWidth/2) / selectedAlgo.n, 0, window.innerWidth/2 / selectedAlgo.n, selectedAlgo.arr[k]/395 * (h-20) );
     }
     else
     {

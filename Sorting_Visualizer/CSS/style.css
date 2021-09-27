@@ -4,6 +4,7 @@ and (min-width : 1224px) {
 html, body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 canvas {
   position: absolute;
@@ -22,8 +23,8 @@ canvas {
 
 .speedSlider{
   position: absolute;
-  left: 500px;
-  top: 300px;
+  right: 30%;
+  top: 55%;
   width: 170px;
 }
 .title{
@@ -42,9 +43,8 @@ canvas {
   color: #ffffff;
   text-align: center;
   position: fixed;
-  left: 0;
-  margin-left: -418px;
-  margin-top: 250px;
+  right: 30%;
+  top: 50%;
   width: 100%;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
@@ -54,46 +54,40 @@ canvas {
   color: #ffffff;
   text-align: center;
   position: fixed;
-  left: 0;
-  margin-left: 343px;
-  margin-top: 250px;
+  left: 30%;
+  top: 50%;
   width: 100%;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
-
 }
 
 .algo{
   color: #ffffff;
   text-align: center;
   position: fixed;
-  left: 0;
-  margin-left: -378px;
-  margin-top: 140px;
+  right: 30%;
+  top: 30%;
   width: 100%;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
 
 }
-
 .mode{
   color: #ffffff;
   text-align: center;
   position: fixed;
-  left: 0;
-  margin-left: 376px;
-  margin-top: 140px;
+  left: 30%;
+  top: 30%;
   width: 100%;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
-
 }
 
 
 
 .square {
-  height: 470px;
-  width: 510px;
+  height:67%;
+  width: 50.1%;
   background-color:whitesmoke;
 }
 
@@ -114,8 +108,10 @@ canvas {
 
 .logo{
   position: fixed;
-  margin-left: 720px;
-  margin-top: 30px;
+  margin-left: 50%;
+  margin-top: 0%;
+  height: 10%;
+
 }
 .footer {
   position: fixed;
