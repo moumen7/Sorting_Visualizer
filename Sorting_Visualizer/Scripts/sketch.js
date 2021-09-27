@@ -3,6 +3,8 @@ let sel;
 let selmode;
 let speedslider;
 let sizeslider;
+let h;
+let w;
 
 window.onload = function() {
   Particles.init({
