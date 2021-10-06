@@ -13,9 +13,11 @@ canvas {
   transform: translate(-50%, -50%);          
 }
 
+
 .sortingCanvas {
-  width: 500px;
-  height: 460px;
+  height: 67.8%;
+  width:  50.8%;
+  margin: auto;
 }
 .info{
   display: none;
@@ -23,17 +25,17 @@ canvas {
 
 .speedSlider{
   position: absolute;
-  right: 30%;
+  right: 80%;
   top: 55%;
+  margin-bottom: auto;
   width: 170px;
 }
 .title{
   color: #ffffff;
   text-align: center;
-  position: fixed;
-  left: 0;
-  margin-top: 60px;
-  margin-left: -10px;
+  position: absolute;
+  margin-top: 3.2%;
+  margin-left: 5px;
   width: 100%;
   font-size: xx-large;
   font-family: 'Trebuchet MS', sans-serif;
@@ -42,10 +44,11 @@ canvas {
 .speed{
   color: #ffffff;
   text-align: center;
-  position: fixed;
-  right: 30%;
-  top: 50%;
+  position: absolute;
+  margin-left: -36%;
+  top: 48%;
   width: 100%;
+  margin-bottom: auto;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
 
@@ -53,9 +56,9 @@ canvas {
 .size{
   color: #ffffff;
   text-align: center;
-  position: fixed;
-  left: 30%;
-  top: 50%;
+  position: absolute;
+  margin-left: 33%;
+  top: 47.5%;
   width: 100%;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
@@ -64,10 +67,10 @@ canvas {
 .algo{
   color: #ffffff;
   text-align: center;
-  position: fixed;
-  right: 30%;
-  top: 30%;
-  width: 100%;
+  position: absolute;
+  margin-left: 17.2%;
+  margin-top: 9%;
+  margin-bottom: auto;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
 
@@ -75,10 +78,11 @@ canvas {
 .mode{
   color: #ffffff;
   text-align: center;
-  position: fixed;
-  left: 30%;
-  top: 30%;
+  position: absolute;
+  right: -30%;
+  top: 17%;
   width: 100%;
+  margin-bottom: auto;
   font-size: medium;
   font-family: 'Trebuchet MS', sans-serif;
 }
@@ -86,11 +90,32 @@ canvas {
 
 
 .square {
-  height:67%;
-  width: 50.1%;
+  height: 67.8%;
+  width:  50.8%;
   background-color:whitesmoke;
 }
 
+.algoCombo{
+  position: absolute;
+  margin-left: 17%;
+  margin-top: 12%;
+  margin-bottom: auto;
+}
+
+.sizeSlider{
+  position: absolute;
+  left: 78%;
+  top: 55%;
+  margin-bottom: auto;
+  width: 170px;
+}
+
+.modeCombo{
+  position: absolute;
+  margin-left: 77%;
+  margin-top: 11%;
+  margin-bottom: auto;
+}
 .background {
   height: 100%;
   background: #000000 ;
@@ -107,11 +132,11 @@ canvas {
 }
 
 .logo{
-  position: fixed;
-  margin-left: 50%;
-  margin-top: 0%;
-  height: 10%;
-
+  position: absolute;
+  margin-left: 48%;
+  margin-top: 15px;
+  margin-bottom: auto;
+  
 }
 .footer {
   position: fixed;
@@ -132,6 +157,7 @@ and (min-width : 1824px) {
   html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
   canvas {
     position: absolute;
@@ -140,24 +166,28 @@ and (min-width : 1824px) {
     transform: translate(-50%, -50%);          
   }
   
+  
   .sortingCanvas {
     width: 500px;
     height: 460px;
   }
+  .info{
+    display: none;
+  }
   
   .speedSlider{
     position: absolute;
-    left: 500px;
-    top: 300px;
+    right: 80%;
+    top: 55%;
+    margin-bottom: auto;
     width: 170px;
   }
   .title{
     color: #ffffff;
     text-align: center;
-    position: fixed;
-    left: 0;
-    margin-top: 60px;
-    margin-left: -10px;
+    position: absolute;
+    margin-top: 3.2%;
+    margin-left: 5px;
     width: 100%;
     font-size: xx-large;
     font-family: 'Trebuchet MS', sans-serif;
@@ -166,11 +196,11 @@ and (min-width : 1824px) {
   .speed{
     color: #ffffff;
     text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -418px;
-    margin-top: 250px;
+    position: absolute;
+    margin-left: -36%;
+    top: 48%;
     width: 100%;
+    margin-bottom: auto;
     font-size: medium;
     font-family: 'Trebuchet MS', sans-serif;
   
@@ -178,50 +208,66 @@ and (min-width : 1824px) {
   .size{
     color: #ffffff;
     text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 343px;
-    margin-top: 250px;
+    position: absolute;
+    margin-left: 33%;
+    top: 47.5%;
     width: 100%;
     font-size: medium;
     font-family: 'Trebuchet MS', sans-serif;
-  
   }
   
   .algo{
     color: #ffffff;
     text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -378px;
-    margin-top: 140px;
-    width: 100%;
+    position: absolute;
+    margin-left: 17.2%;
+    margin-top: 9%;
+    margin-bottom: auto;
     font-size: medium;
     font-family: 'Trebuchet MS', sans-serif;
   
   }
-  
   .mode{
     color: #ffffff;
     text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 376px;
-    margin-top: 140px;
+    position: absolute;
+    left: 30%;
+    top: 17%;
     width: 100%;
+    margin-bottom: auto;
     font-size: medium;
     font-family: 'Trebuchet MS', sans-serif;
-  
   }
   
   
   
   .square {
-    height: 470px;
-    width: 510px;
+    height: 67.8%;
+    width:  50.8%;
     background-color:whitesmoke;
   }
   
+  .algoCombo{
+    position: absolute;
+    margin-left: 17%;
+    margin-top: 12%;
+    margin-bottom: auto;
+  }
+  
+  .sizeSlider{
+    position: absolute;
+    left: 78%;
+    top: 55%;
+    margin-bottom: auto;
+    width: 170px;
+  }
+  
+  .modeCombo{
+    position: absolute;
+    margin-left: 77%;
+    margin-top: 11%;
+    
+  }
   .background {
     height: 100%;
     background: #000000 ;
@@ -238,9 +284,11 @@ and (min-width : 1824px) {
   }
   
   .logo{
-    position: fixed;
-    margin-left: 720px;
-    margin-top: 30px;
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 15px;
+    margin-bottom: auto;
+    
   }
   .footer {
     position: fixed;
@@ -252,6 +300,7 @@ and (min-width : 1824px) {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: small;
   }
+  
   
 }
 
@@ -273,75 +322,42 @@ canvas {
      
 }
 
-#sortingCanvas {
+.sortingCanvas {
   display: none;
 }
 
-#algoCombo{ 
+.algoCombo{ 
   display: none;
 }
-#speedSlider{
-  display: none;
-}
-
-#sizeSlider{
+.speedSlider{
   display: none;
 }
 
-#modeCombo{
+.sizeSlider{
+  display: none;
+}
+
+.modeCombo{
   display: none;
 }
 
 
 .speed{
-  color: #ffffff;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  margin-left: -418px;
-  margin-top: 250px;
-  width: 100%;
-  font-size: medium;
-  font-family: 'Trebuchet MS', sans-serif;
   display: none;
 
 }
 .size{
-  color: #ffffff;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  margin-left: 343px;
-  margin-top: 250px;
-  width: 100%;
-  font-size: medium;
-  font-family: 'Trebuchet MS', sans-serif;
+  
   display: none;
 }
 
 .algo{
-  color: #ffffff;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  margin-left: -378px;
-  margin-top: 140px;
-  width: 100%;
-  font-size: medium;
-  font-family: 'Trebuchet MS', sans-serif;
+  
   display: none;
 }
 
 .mode{
-  color: #ffffff;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  margin-left: 376px;
-  margin-top: 140px;
-  width: 100%;
-  font-size: medium;
-  font-family: 'Trebuchet MS', sans-serif;
+ 
   display: none;
 
 }
@@ -349,9 +365,7 @@ canvas {
 
 
 .square {
-  height: 470px;
-  width: 510px;
-  background-color:whitesmoke;
+  
   display: none;
 }
 
@@ -372,7 +386,7 @@ canvas {
 
 .logo{
   position: fixed;
-  margin-left: 310px;
+  margin-left: 470px;
   margin-top: 30px;
 }
 .title{
@@ -381,7 +395,7 @@ canvas {
   position: absolute;
   left: 0;
   margin-top: 60px;
-  margin-left: -160px;
+  margin-left: -1px;
   width: 100%;
   font-size: xx-large;
   font-family: 'Trebuchet MS', sans-serif;
@@ -391,8 +405,9 @@ canvas {
   text-align: center;
   font-family: 'Trebuchet MS', sans-serif;
   color: white;
-  left: -170px;
+  left: -2px;
   bottom: -300px;
+  font-size: xx-large;
 }
 .footer {
   position: fixed;
@@ -408,137 +423,6 @@ canvas {
 
 }
 
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  .info{
-    display: none;
-  }
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-25%, -25%);          
-  }
-  
-  .sortingCanvas {
-    width: 500px;
-    height: 460px;
-  }
-  
-  .speedSlider{
-    position: absolute;
-    left: 500px;
-    top: 300px;
-    width: 170px;
-  }
-  .title{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-top: 60px;
-    margin-left: -10px;
-    width: 100%;
-    font-size: xx-large;
-    font-family: 'Trebuchet MS', sans-serif;
-  }
-  
-  .speed{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -418px;
-    margin-top: 250px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  
-  }
-  .size{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 343px;
-    margin-top: 250px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  
-  }
-  
-  .algo{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -378px;
-    margin-top: 140px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  
-  }
-  
-  .mode{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 376px;
-    margin-top: 140px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  
-  }
-  
-  
-  
-  .square {
-    height: 470px;
-    width: 510px;
-    background-color:whitesmoke;
-  }
-  
-  .background {
-    height: 100%;
-    background: #000000 ;
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #ffffff;
-    
-  }
-  @font-face {
-    font-family: titleFont;
-    src: url(titlefont.ttf);
-  }
-  
-  .logo{
-    position: fixed;
-    margin-left: 720px;
-    margin-top: 30px;
-  }
-  .footer {
-    position: fixed;
-    left: -10px;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: small;
-  }
-
-}
 
 /* iPads (portrait) ----------- */
 @media only screen 
@@ -557,75 +441,43 @@ and (orientation : portrait) {
        
   }
   
-  #sortingCanvas {
+  .sortingCanvas {
     display: none;
   }
   
-  #algoCombo{ 
+  .algoCombo{ 
     display: none;
   }
-  #speedSlider{
-    display: none;
-  }
-  
-  #sizeSlider{
+  .speedSlider{
     display: none;
   }
   
-  #modeCombo{
+  .sizeSlider{
+    display: none;
+  }
+  
+  .modeCombo{
     display: none;
   }
   
   
   .speed{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -418px;
-    margin-top: 250px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+    
     display: none;
   
   }
   .size{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 343px;
-    margin-top: 250px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+    
     display: none;
   }
   
   .algo{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -378px;
-    margin-top: 140px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+    
     display: none;
   }
   
   .mode{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 376px;
-    margin-top: 140px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+    
     display: none;
   
   }
@@ -633,9 +485,7 @@ and (orientation : portrait) {
   
   
   .square {
-    height: 470px;
-    width: 510px;
-    background-color:whitesmoke;
+    
     display: none;
   }
   
@@ -656,8 +506,9 @@ and (orientation : portrait) {
   
   .logo{
     position: fixed;
-    margin-left: 200px;
+    margin-left: 580px;
     margin-top: 30px;
+    
   }
   .title{
     color: #ffffff;
@@ -665,7 +516,7 @@ and (orientation : portrait) {
     position: absolute;
     left: 0;
     margin-top: 60px;
-    margin-left: -140px;
+    margin-right: -900px;
     width: 100%;
     font-size: xx-large;
     font-family: 'Trebuchet MS', sans-serif;
@@ -675,9 +526,9 @@ and (orientation : portrait) {
     text-align: center;
     font-family: 'Trebuchet MS', sans-serif;
     color: white;
-    left: -150px;
-    bottom: -300px;
-    font-size: small;
+    left: -5px;
+    bottom: -500px;
+    font-size: x-large;
   }
   .footer {
     position: fixed;
@@ -708,75 +559,43 @@ and (max-device-width : 480px) {
        
   }
   
-  #sortingCanvas {
+  .sortingCanvas {
     display: none;
   }
   
-  #algoCombo{ 
+  .algoCombo{ 
     display: none;
   }
-  #speedSlider{
-    display: none;
-  }
-  
-  #sizeSlider{
+  .speedSlider{
     display: none;
   }
   
-  #modeCombo{
+  .sizeSlider{
+    display: none;
+  }
+  
+  .modeCombo{
     display: none;
   }
   
   
   .speed{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -418px;
-    margin-top: 250px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+    
     display: none;
   
   }
   .size{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 343px;
-    margin-top: 250px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+   
     display: none;
   }
   
   .algo{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: -378px;
-    margin-top: 140px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+    
     display: none;
   }
   
   .mode{
-    color: #ffffff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    margin-left: 376px;
-    margin-top: 140px;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
+   
     display: none;
   
   }
@@ -784,9 +603,7 @@ and (max-device-width : 480px) {
   
   
   .square {
-    height: 470px;
-    width: 510px;
-    background-color:whitesmoke;
+    
     display: none;
   }
   
@@ -844,6 +661,9 @@ and (max-device-width : 480px) {
 }
 @media only screen and (min-width: 600px) {
   html {
+    zoom: 0.8;
+  }
+  .responsive{
     zoom: .8;
   }
 }
@@ -852,10 +672,16 @@ and (max-device-width : 480px) {
   html {
     zoom: .9;        
   }
+  .responsive{
+    zoom: .9;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
   html {
+    zoom: 1;
+  }
+  .responsive{
     zoom: 1;
   }
 }

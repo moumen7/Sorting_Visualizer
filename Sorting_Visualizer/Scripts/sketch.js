@@ -25,23 +25,20 @@ window.onload = function() {
 function setspeedslider()
 {
   speedslider = createSlider(1, 60, 30, 2);
-  speedslider.id("speedSlider");
-  speedslider.position(300, 300);
-  speedslider.style('width', '170px');
+  speedslider.class("speedSlider");
 }
 
 function setsizeslider(min,max,value,step)
 {
   sizeslider = createSlider(min, max, value,step);
-  sizeslider.id("sizeSlider");
-  sizeslider.position(1070, 300);
+  sizeslider.class("sizeSlider");
   sizeslider.style('width', '170px');
 }
 function setAlgocombo()
 {
   sel = createSelect();
-  sel.id("algoCombo");
-  sel.position(350, 190);
+  sel.class("algoCombo");
+  
   sel.option('Insertion');
   sel.option('Bubble');
   sel.option('Selection');
@@ -55,8 +52,8 @@ function setAlgocombo()
 function setmodecombo()
 {
   selmode = createSelect();
-  selmode.id("modeCombo");
-  selmode.position(1100, 190);
+  selmode.class("modeCombo");
+ 
 
   selmode.option('Points');
   selmode.option('Rectangles');
@@ -83,7 +80,7 @@ function setup()
   var h = window.innerHeight*2/3;
   var w= window.innerWidth/2;
   canvas = createCanvas(w, h);
-  canvas.id("sortingCanvas");
+  canvas.class("sortingCanvas");
   frameRate(30);
   fill(255, 255, 255);
   text("Speed",10,10)
