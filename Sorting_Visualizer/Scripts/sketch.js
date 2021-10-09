@@ -80,7 +80,6 @@ function setup()
   var h = window.innerHeight*2/3;
   var w= window.innerWidth/2;
   canvas = createCanvas(w, h);
-  canvas.class("sortingCanvas");
   frameRate(30);
   fill(255, 255, 255);
   text("Speed",10,10)
@@ -100,9 +99,21 @@ function setup()
 function draw() {
   
   //ui
-  var h = window.innerHeight*2/3;
-  var w= window.innerWidth/2;
+  var h = document.documentElement.clientHeight*2/3;
+  var w=  document.documentElement.clientWidth/2;
   canvas = createCanvas(w, h);
+  var num = w/ 5;
+  var str = num.toString();
+  speedslider.style('width',str + 'px');
+  sizeslider.style('width',str + 'px');
+  if(num > 100)
+  {
+    str = '100';
+  }
+  sel.style('width',str + 'px');
+  selmode.style('width',str + 'px');
+  
+  
   background(0);
   fill(255, 255, 255);
   frameRate(speedslider.value())
@@ -110,9 +121,10 @@ function draw() {
   selectedAlgo.sleepfactor = ratio * ratio ;
   
   Onchangesize();
+  textSize(w/40);
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
-  + selectedAlgo.comparsions, 10 , h-10);
+  + selectedAlgo.comparsions, 4 , h-10);
   
   for (let k = 0; k < selectedAlgo.n; k++) {
     if(selmode.value()=="Rectangles")
@@ -121,13 +133,13 @@ function draw() {
     var color = selectedAlgo.ColorManager(k);
     fill(color);
 
-    rect((k * window.innerWidth/2) / selectedAlgo.n, 0, window.innerWidth/2 / selectedAlgo.n, selectedAlgo.arr[k]/395 * (h-20) );
+    rect((k * w) / selectedAlgo.n, 0, window.innerWidth/2 / selectedAlgo.n, selectedAlgo.arr[k]/395 * (h-30) );
     }
     else
     {
     stroke(255, 204, 100);
     stroke('white');
-    point(k/selectedAlgo.n * 500,selectedAlgo.arr[k] );
+    point((k * w) / selectedAlgo.n,selectedAlgo.arr[k]/395 * (h-50) );
     }
     
   }
@@ -137,9 +149,13 @@ function draw() {
 }
 function Onchangesize()
 {
-  if(selectedAlgo.n!=sizeslider.value())
+  if(selectedAlgo.n!=sizeslider.value() && !selectedAlgo.points)
   {
-    
+    factoryalgo(sel.value());
+  }
+
+  if(selectedAlgo.n!=sizeslider.value() * 10 && selectedAlgo.points)
+  {
     factoryalgo(sel.value());
   }
 }
@@ -175,10 +191,7 @@ function OnchangeMode()
     mid = 250;
   }
   fill(255, 255, 255);
-  sizeslider.remove();
-  sizeslider = createSlider(min, max, mid, 2);
-  sizeslider.position(1070, 300);
-  sizeslider.style('width', '170px');
+ 
   //algorithm selection
   factoryalgo(sel.value());
 }
@@ -199,14 +212,21 @@ function factoryalgo(x)
   else if(x == 'Bogo')
   selectedAlgo = new  Bogo_Sort();
 
+  
+  if(selmode.value() == "Points")
+  {
+  selectedAlgo.points = true;
+  selectedAlgo.n = sizeslider.value() * 10;
+  }
+  else
+  {
+  selectedAlgo.points = false;
   selectedAlgo.n = sizeslider.value();
+  }
   
   for (let i = 0; i < selectedAlgo.n; i++) selectedAlgo.arr.push(random(400));
 
-  if(selmode.value() == "Points")
-  selectedAlgo.points = true;
-  else
-  selectedAlgo.points = false;
+ 
 
   selectedAlgo.sort();
 }
