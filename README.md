@@ -1,11 +1,12 @@
-﻿# Sorting Visualizer
+﻿You can try here: https://moumen7.github.io/Sorting_Visualizer/
+ 
+ # Sorting Visualizer
  <p align="middle">
  <img src="https://user-images.githubusercontent.com/58152328/132061249-d6fc7d12-3274-4266-b163-83ef2c717a61.png" width="350" height="300">
 </p>
 
 
 ---
-You can try here: https://moumen7.github.io/Sorting_Visualizer/
 
  ### Table of Contents.
  
