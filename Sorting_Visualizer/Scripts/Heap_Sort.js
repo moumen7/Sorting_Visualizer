@@ -44,7 +44,10 @@ class Heap_Sort extends Sorting {
         while ( this.arr[parent] && this.arr[parent] < this.arr[index]) {
             this.comparsions++;
             this.arrayacess+=2;
+            if(!this.points)
+            {
             await this.sleep(this.sleepfactor);
+            }
             this.swap(parent, index);
             index = await this.parentIndex(index);
             parent = await this.parentIndex(index);
@@ -63,7 +66,10 @@ class Heap_Sort extends Sorting {
             this.comparsions+=2;
             this.arrayacess+=2;
             var max = leftChild;
-            await this.sleep(this.sleepfactor);
+            if(!this.points)
+            {
+                    await this.sleep(this.sleepfactor);
+            }
             if (this.arr[rightChild] && rightChild <= this.r  && this.arr[rightChild] > this.arr[max]) {
                 this.comparsions++;
                 this.arrayacess+=2;
@@ -99,9 +105,6 @@ class Heap_Sort extends Sorting {
             await this.sleep(this.sleepfactor);
         }
         this.states[this.r ] =this.states[this.r-1]
-
-
-
 
         for (this.i = 0; this.i <= this.n; this.i++) {
             await this.deletee();
