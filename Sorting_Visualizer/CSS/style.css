@@ -1,6 +1,5 @@
-@media only screen 
-and (min-width : 1224px) {
 /* Styles */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -23,18 +22,11 @@ canvas {
   display: none;
 }
 
-.speedSlider{
-  position: absolute;
-  right: 80%;
-  top: 55%;
-  margin-bottom: auto;
-  width: 170px;
-}
 .title{
   color: #ffffff;
   text-align: center;
   position: absolute;
-  margin-top: 3.2%;
+  top: 5%;
   margin-left: 5px;
   width: 100%;
   font-size: xx-large;
@@ -45,48 +37,85 @@ canvas {
   color: #ffffff;
   text-align: center;
   position: absolute;
-  margin-left: -36%;
+  left: 13%;
   top: 48%;
-  width: 100%;
-  margin-bottom: auto;
-  font-size: medium;
+  transform: translate(-50%, 0);
+  font-size: calc(9.5px + 0.7vw);
   font-family: 'Trebuchet MS', sans-serif;
-
 }
+
 .size{
   color: #ffffff;
   text-align: center;
   position: absolute;
-  margin-left: 33%;
-  top: 47.5%;
-  width: 100%;
-  font-size: medium;
+  left: 87%;
+  top: 48%;
+  transform: translate(-50%, 0);
+  font-size: calc(9.5px + 0.7vw);
   font-family: 'Trebuchet MS', sans-serif;
+}
+
+.speedSlider{
+  position: absolute;
+  position: absolute;
+  left: 13%;
+  top: 55%;
+  transform: translate(-50%, 0);
+  margin-bottom: auto;
+  width: 170px;
 }
 
 .algo{
   color: #ffffff;
   text-align: center;
   position: absolute;
-  margin-left: 17.2%;
-  margin-top: 9%;
+  position: absolute;
+  left: 13%;
+  top: 18%;
+  transform: translate(-50%, 0);
   margin-bottom: auto;
-  font-size: medium;
+  font-size: calc(13px + 0.3vw);
   font-family: 'Trebuchet MS', sans-serif;
 
 }
+.algoCombo{
+  position: absolute;
+  position: absolute;
+  left: 13%;
+  top: 25%;
+  transform: translate(-50%, 0);
+  margin-bottom: auto;
+}
+
+
+.sizeSlider{
+  position: absolute;
+  left: 87%;
+  top: 55%;
+  transform: translate(-50%, 0);
+
+  margin-bottom: auto;
+  width: 170px;
+}
+
 .mode{
   color: #ffffff;
   text-align: center;
   position: absolute;
-  right: -30%;
-  top: 17%;
-  width: 100%;
+  left: 87%;
+  top: 18%;
+  transform: translate(-50%, 0); 
   margin-bottom: auto;
-  font-size: medium;
+  font-size: calc(16px + 0.3vw);
   font-family: 'Trebuchet MS', sans-serif;
 }
-
+.modeCombo{
+  position: absolute;
+  left: 87%;
+  top: 25%;
+  transform: translate(-50%, 0); 
+  margin-bottom: auto;
+}
 
 
 .square {
@@ -95,27 +124,6 @@ canvas {
   background-color:whitesmoke;
 }
 
-.algoCombo{
-  position: absolute;
-  margin-left: 17%;
-  margin-top: 12%;
-  margin-bottom: auto;
-}
-
-.sizeSlider{
-  position: absolute;
-  left: 78%;
-  top: 55%;
-  margin-bottom: auto;
-  width: 170px;
-}
-
-.modeCombo{
-  position: absolute;
-  margin-left: 77%;
-  margin-top: 11%;
-  margin-bottom: auto;
-}
 .background {
   height: 100%;
   background: #000000 ;
@@ -149,539 +157,4 @@ canvas {
   font-size: small;
 }
 
-}
 
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);          
-  }
-  
-  
-  .sortingCanvas {
-    width: 500px;
-    height: 460px;
-  }
-  .info{
-    display: none;
-  }
-  
-  .speedSlider{
-    position: absolute;
-    right: 80%;
-    top: 55%;
-    margin-bottom: auto;
-    width: 170px;
-  }
-  .title{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    margin-top: 3.2%;
-    margin-left: 5px;
-    width: 100%;
-    font-size: xx-large;
-    font-family: 'Trebuchet MS', sans-serif;
-  }
-  
-  .speed{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    margin-left: -36%;
-    top: 48%;
-    width: 100%;
-    margin-bottom: auto;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  
-  }
-  .size{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    margin-left: 33%;
-    top: 47.5%;
-    width: 100%;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  }
-  
-  .algo{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    margin-left: 17.2%;
-    margin-top: 9%;
-    margin-bottom: auto;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  
-  }
-  .mode{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    left: 30%;
-    top: 17%;
-    width: 100%;
-    margin-bottom: auto;
-    font-size: medium;
-    font-family: 'Trebuchet MS', sans-serif;
-  }
-  
-  
-  
-  .square {
-    height: 67.8%;
-    width:  50.8%;
-    background-color:whitesmoke;
-  }
-  
-  .algoCombo{
-    position: absolute;
-    margin-left: 17%;
-    margin-top: 12%;
-    margin-bottom: auto;
-  }
-  
-  .sizeSlider{
-    position: absolute;
-    left: 78%;
-    top: 55%;
-    margin-bottom: auto;
-    width: 170px;
-  }
-  
-  .modeCombo{
-    position: absolute;
-    margin-left: 77%;
-    margin-top: 11%;
-    
-  }
-  .background {
-    height: 100%;
-    background: #000000 ;
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #ffffff;
-    
-  }
-  @font-face {
-    font-family: titleFont;
-    src: url(titlefont.ttf);
-  }
-  
-  .logo{
-    position: absolute;
-    margin-left: 48%;
-    margin-top: 15px;
-    margin-bottom: auto;
-    
-  }
-  .footer {
-    position: fixed;
-    left: -10px;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: small;
-  }
-  
-  
-}
-
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-canvas {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-     
-}
-
-.sortingCanvas {
-  display: none;
-}
-
-.algoCombo{ 
-  display: none;
-}
-.speedSlider{
-  display: none;
-}
-
-.sizeSlider{
-  display: none;
-}
-
-.modeCombo{
-  display: none;
-}
-
-
-.speed{
-  display: none;
-
-}
-.size{
-  
-  display: none;
-}
-
-.algo{
-  
-  display: none;
-}
-
-.mode{
- 
-  display: none;
-
-}
-
-
-
-.square {
-  
-  display: none;
-}
-
-.background {
-  height: 100%;
-  background: #000000 ;
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  color: #ffffff;
-  
-}
-@font-face {
-  font-family: titleFont;
-  src: url(titlefont.ttf);
-}
-
-.logo{
-  position: fixed;
-  margin-left: 470px;
-  margin-top: 30px;
-}
-.title{
-  color: #ffffff;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  margin-top: 60px;
-  margin-left: -1px;
-  width: 100%;
-  font-size: xx-large;
-  font-family: 'Trebuchet MS', sans-serif;
-}
-.info{
-  position: relative;
-  text-align: center;
-  font-family: 'Trebuchet MS', sans-serif;
-  color: white;
-  left: -2px;
-  bottom: -300px;
-  font-size: xx-large;
-}
-.footer {
-  position: fixed;
-  left: -10px;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-  font-family: 'Trebuchet MS', sans-serif;
-  font-size: small;
-  display: block;
-}
-
-}
-
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-       
-  }
-  
-  .sortingCanvas {
-    display: none;
-  }
-  
-  .algoCombo{ 
-    display: none;
-  }
-  .speedSlider{
-    display: none;
-  }
-  
-  .sizeSlider{
-    display: none;
-  }
-  
-  .modeCombo{
-    display: none;
-  }
-  
-  
-  .speed{
-    
-    display: none;
-  
-  }
-  .size{
-    
-    display: none;
-  }
-  
-  .algo{
-    
-    display: none;
-  }
-  
-  .mode{
-    
-    display: none;
-  
-  }
-  
-  
-  
-  .square {
-    
-    display: none;
-  }
-  
-  .background {
-    height: 100%;
-    background: #000000 ;
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #ffffff;
-    
-  }
-  @font-face {
-    font-family: titleFont;
-    src: url(titlefont.ttf);
-  }
-  
-  .logo{
-    position: fixed;
-    margin-left: 580px;
-    margin-top: 30px;
-    
-  }
-  .title{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    left: 0;
-    margin-top: 60px;
-    margin-right: -900px;
-    width: 100%;
-    font-size: xx-large;
-    font-family: 'Trebuchet MS', sans-serif;
-  }
-  .info{
-    position: relative;
-    text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    color: white;
-    left: -5px;
-    bottom: -500px;
-    font-size: x-large;
-  }
-  .footer {
-    position: fixed;
-    left: -10px;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: small;
-    display: block;
-  }  
-
-}
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-       
-  }
-  
-  .sortingCanvas {
-    display: none;
-  }
-  
-  .algoCombo{ 
-    display: none;
-  }
-  .speedSlider{
-    display: none;
-  }
-  
-  .sizeSlider{
-    display: none;
-  }
-  
-  .modeCombo{
-    display: none;
-  }
-  
-  
-  .speed{
-    
-    display: none;
-  
-  }
-  .size{
-   
-    display: none;
-  }
-  
-  .algo{
-    
-    display: none;
-  }
-  
-  .mode{
-   
-    display: none;
-  
-  }
-  
-  
-  
-  .square {
-    
-    display: none;
-  }
-  
-  .background {
-    height: 100%;
-    background: #000000 ;
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #ffffff;
-    
-  }
-  @font-face {
-    font-family: titleFont;
-    src: url(titlefont.ttf);
-  }
-  
-  .logo{
-    position: fixed;
-    margin-left: 150px;
-    margin-top: 30px;
-  }
-  .title{
-    color: #ffffff;
-    text-align: center;
-    position: absolute;
-    left: 0;
-    margin-top: 60px;
-    margin-left: -0px;
-    width: 100%;
-    font-size: xx-large;
-    font-family: 'Trebuchet MS', sans-serif;
-  }
-  .info{
-    position: relative;
-    text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    color: white;
-    left: -0px;
-    bottom: -300px;
-    font-size: small;
-  }
-  .footer {
-    position: fixed;
-    left: -10px;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: small;
-    display: block;
-  }
-}
-@media only screen and (min-width: 600px) {
-  html {
-    zoom: 0.8;
-  }
-  .responsive{
-    zoom: .8;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  html {
-    zoom: .9;        
-  }
-  .responsive{
-    zoom: .9;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  html {
-    zoom: 1;
-  }
-  .responsive{
-    zoom: 1;
-  }
-}
