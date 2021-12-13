@@ -44,6 +44,7 @@ function setAlgocombo()
   sel.option('Selection');
   sel.option('Merge');
   sel.option('Quick');
+  sel.option('Heap');
   
   sel.selected('Insertion');
   
@@ -121,7 +122,7 @@ function draw() {
   selectedAlgo.sleepfactor = ratio * ratio ;
   
   Onchangesize();
-  textSize(w/40);
+  textSize(w/49);
   text("Algorithm - " + selectedAlgo.algorithm +
   ", Array access:  " + selectedAlgo.arrayacess + ", Comparsions: "
   + selectedAlgo.comparsions, 4 , h-10);
@@ -211,6 +212,9 @@ function factoryalgo(x)
   selectedAlgo = new  Quick_Sort();
   else if(x == 'Bogo')
   selectedAlgo = new  Bogo_Sort();
+  else if(x == 'Heap')
+  selectedAlgo = new  Heap_Sort();
+
 
   
   if(selmode.value() == "Points")
