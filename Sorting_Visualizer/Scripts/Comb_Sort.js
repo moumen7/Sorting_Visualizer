@@ -35,7 +35,7 @@ class Comb_Sort extends Sorting {
             for (this.i = 0; this.i < this.n - this.gap; this.i++)
             {
                 await this.sleep(this.sleepfactor);
-                this.states[this.i] = 1;
+                this.states[this.i] = 5;
                 this.comparsions++;
                 if (this.arr[this.i] > this.arr[this.i + this.gap]){
                     this.states[this.i] = 4;
@@ -43,19 +43,15 @@ class Comb_Sort extends Sorting {
                     this.arrayacess += 2;
                     await this.sleep(this.sleepfactor); 
                     this.swap(this.i, this.i + this.gap);
-                    this.states[this.i] = 1;
-                    this.states[this.i + this.gap] = 1;
                     this.comparsions += 1;
                 }
-                
+                this.states[this.i] = 5;
+                this.states[this.i + this.gap] = 5;
                     
             }
     
           }
     
-          
-        
-
     }
 
     async getNextGap(g){
