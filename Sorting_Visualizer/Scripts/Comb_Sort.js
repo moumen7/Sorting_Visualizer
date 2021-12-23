@@ -24,16 +24,19 @@ class Comb_Sort extends Sorting {
 
 
     async combSort(){
-
+        if (this.points)
+            this.sleepfactor = 0.25;
+        
         this.gap = await this.getNextGap(this.n);
         while (this.gap != 1){
-
-            await this.sleep(this.sleepfactor);
+            if (!this.points)
+                await this.sleep(this.sleepfactor);
             this.gap = await this.getNextGap(this.gap);
            
             
             for (this.i = 0; this.i < this.n - this.gap; this.i++)
-            {
+            {   
+                
                 await this.sleep(this.sleepfactor);
                 this.states[this.i] = 5;
                 this.comparsions++;
@@ -41,7 +44,8 @@ class Comb_Sort extends Sorting {
                     this.states[this.i] = 4;
                     this.states[this.i + this.gap] = 3;
                     this.arrayacess += 2;
-                    await this.sleep(this.sleepfactor); 
+                    if (!this.points)
+                        await this.sleep(this.sleepfactor); 
                     this.swap(this.i, this.i + this.gap);
                     this.comparsions += 1;
                 }
