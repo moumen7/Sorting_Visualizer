@@ -45,6 +45,7 @@ function setAlgocombo()
   sel.option('Merge');
   sel.option('Quick');
   sel.option('Heap');
+  sel.option('Comb');
   
   sel.selected('Insertion');
   
@@ -214,7 +215,8 @@ function factoryalgo(x)
   selectedAlgo = new  Bogo_Sort();
   else if(x == 'Heap')
   selectedAlgo = new  Heap_Sort();
-
+  else if(x == 'Comb')
+  selectedAlgo = new  Comb_Sort();
 
   
   if(selmode.value() == "Points")
